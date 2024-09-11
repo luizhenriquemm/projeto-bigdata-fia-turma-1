@@ -127,22 +127,6 @@ services:
       - redis
       - db
 
-  airflow-triggerer:
-    <<: *airflow-common
-    container_name: airflow-triggerer
-    platform: linux/amd64
-    hostname: airflow-triggerer
-    command: triggerer
-    healthcheck:
-      test: ["CMD-SHELL", 'airflow jobs check --job-type TriggererJob --hostname "$${HOSTNAME}"']
-      interval: 30s
-      timeout: 10s
-      retries: 5
-      start_period: 30s
-    depends_on:
-      - redis
-      - db
-
   airflow-cli:
     <<: *airflow-common
     container_name: airflow-cli
@@ -180,6 +164,17 @@ services:
 ############################
 ## DATABASE
 ############################
+  redis:
+    image: redis:latest
+    platform: linux/amd64
+    container_name: redis
+    hostname: redis
+    expose:
+      - 6379
+    ports:
+        - 6379:6379
+    volumes:
+      - ./containers-data/util:/util    
 
   presto:
     platform: linux/amd64
@@ -195,7 +190,7 @@ services:
     ports:
       - 18080:8080
     depends_on:
-      - hive
+      - metastore
 
     deploy:
       resources:
@@ -340,7 +335,7 @@ services:
     #environment:
     #  PYSPARK_SUBMIT_ARGS: "--packages io.delta:delta-core_2.12:2.2.0,org.apache.hadoop:hadoop-aws:3.3.1,com.amazonaws:aws-java-sdk-bundle:1.12.392"
     env_file:
-      - ./spark/env/jupyter.env
+      - ./containers-data/spark/env/jupyter.env
     ports:
       - 5040:4040
       - 5041:4041
@@ -376,21 +371,6 @@ services:
     hostname: mysql-setup
     image: ${DATAHUB_MYSQL_SETUP_IMAGE:-acryldata/datahub-mysql-setup}:${DATAHUB_VERSION:-head}
     container_name: datahub-mysql-setup
-    
-  kafka-setup:
-    depends_on:
-      kafka-broker:
-        condition: service_healthy
-      kafka-schema-registry:
-        condition: service_healthy
-    environment:
-    - DATAHUB_PRECREATE_TOPICS=${DATAHUB_PRECREATE_TOPICS:-false}
-    - KAFKA_BOOTSTRAP_SERVER=kafka-broker:9092
-    - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
-    - USE_CONFLUENT_SCHEMA_REGISTRY=FALSE
-    hostname: kafka-setup
-    image: ${DATAHUB_KAFKA_SETUP_IMAGE:-linkedin/datahub-kafka-setup}:${DATAHUB_VERSION:-head}
-    container_name: datahub-kafka-setup
 
 ##################################################
 ### EDA
