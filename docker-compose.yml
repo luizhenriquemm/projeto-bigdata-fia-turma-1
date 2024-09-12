@@ -5,7 +5,7 @@ version: '3.7'
 ############################
 x-airflow-common:
   &airflow-common
-  image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.7.3}
+  build: ./docker-images/airflow/.
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
@@ -15,11 +15,12 @@ x-airflow-common:
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
     AIRFLOW__CORE__FERNET_KEY: ''
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
-    AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
   volumes:
+    - ./containers-data/airflow/scripts:/opt/shared/scripts
     - ./containers-data/airflow/dags:/opt/airflow/dags
     - ./containers-data/airflow/logs:/opt/airflow/logs
     - ./containers-data/airflow/config:/opt/airflow/config
@@ -228,7 +229,7 @@ services:
     container_name: mysql
     # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
     # (this is just an example, not intended to be a production configuration)
-    command: --default-authentication-plugin=mysql_native_password
+    # command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -301,9 +302,11 @@ services:
       - /bin/sh
       - -c
       - |
+        /env/start-ssh.sh
         /usr/local/spark/sbin/start-master.sh
         start-notebook.sh --NotebookApp.token=''
     ports:
+      - 7022:22
       - 8889:8888
       - 4040:4040
       - 4041:4041
@@ -315,6 +318,7 @@ services:
       - ./containers-data/spark/work:/home/user 
       - ./containers-data/spark/env:/env 
       - ./containers-data/util:/util
+      - ./containers-data/airflow/scripts:/opt/shared/scripts
     deploy:
       resources:
         limits:
@@ -346,6 +350,7 @@ services:
     volumes:
       - ./containers-data/util:/util
       - ./containers-data/spark/work:/home/user 
+      - ./containers-data/airflow/scripts:/opt/shared/scripts
     environment:
       SPARK_MASTER: spark-master
     depends_on:
@@ -354,23 +359,6 @@ services:
       resources:
         limits:
           memory: 1g
-
-##################################################
-### GOVERNANCA
-##################################################
-  mysql-setup:
-    depends_on:
-      mysql:
-        condition: service_healthy
-    environment:
-    - MYSQL_HOST=mysql
-    - MYSQL_PORT=3306
-    - MYSQL_USERNAME=root
-    - MYSQL_PASSWORD=root
-    - DATAHUB_DB_NAME=datahub
-    hostname: mysql-setup
-    image: ${DATAHUB_MYSQL_SETUP_IMAGE:-acryldata/datahub-mysql-setup}:${DATAHUB_VERSION:-head}
-    container_name: datahub-mysql-setup
 
 ##################################################
 ### EDA

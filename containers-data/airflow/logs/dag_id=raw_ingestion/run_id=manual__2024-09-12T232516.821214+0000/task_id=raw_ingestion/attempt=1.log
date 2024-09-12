@@ -1,0 +1,30 @@
+[2024-09-12T23:25:17.730+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: raw_ingestion.raw_ingestion manual__2024-09-12T23:25:16.821214+00:00 [queued]>
+[2024-09-12T23:25:17.738+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: raw_ingestion.raw_ingestion manual__2024-09-12T23:25:16.821214+00:00 [queued]>
+[2024-09-12T23:25:17.739+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 11
+[2024-09-12T23:25:17.752+0000] {taskinstance.py:1382} INFO - Executing <Task(SSHOperator): raw_ingestion> on 2024-09-12 23:25:16.821214+00:00
+[2024-09-12T23:25:17.759+0000] {standard_task_runner.py:57} INFO - Started process 658 to run task
+[2024-09-12T23:25:17.761+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'raw_ingestion', 'raw_ingestion', 'manual__2024-09-12T23:25:16.821214+00:00', '--job-id', '34', '--raw', '--subdir', 'DAGS_FOLDER/raw_ingestion.py', '--cfg-path', '/tmp/tmpwc3frxkn']
+[2024-09-12T23:25:17.762+0000] {standard_task_runner.py:85} INFO - Job 34: Subtask raw_ingestion
+[2024-09-12T23:25:17.856+0000] {task_command.py:416} INFO - Running <TaskInstance: raw_ingestion.raw_ingestion manual__2024-09-12T23:25:16.821214+00:00 [running]> on host airflow-worker
+[2024-09-12T23:25:18.024+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='raw_ingestion' AIRFLOW_CTX_TASK_ID='raw_ingestion' AIRFLOW_CTX_EXECUTION_DATE='2024-09-12T23:25:16.821214+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-12T23:25:16.821214+00:00'
+[2024-09-12T23:25:18.025+0000] {ssh.py:141} INFO - Creating ssh_client
+[2024-09-12T23:25:18.025+0000] {ssh.py:114} INFO - ssh_hook is not provided or invalid. Trying ssh_conn_id to create SSHHook.
+[2024-09-12T23:25:18.049+0000] {base.py:73} INFO - Using connection ID 'spark_ssh_default' for task execution.
+[2024-09-12T23:25:18.050+0000] {ssh.py:300} WARNING - No Host Key Verification. This won't protect against Man-In-The-Middle attacks
+[2024-09-12T23:25:18.057+0000] {transport.py:1893} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2024-09-12T23:25:18.136+0000] {transport.py:1893} INFO - Authentication (password) successful!
+[2024-09-12T23:25:18.137+0000] {ssh.py:478} INFO - Running command: /opt/conda/bin/spark-submit/spark-submit --master local[*] --executor-memory 2g /opt/shared/scripts/raw_ingestion.py
+[2024-09-12T23:25:18.200+0000] {ssh.py:529} WARNING - bash: line 1: /opt/conda/bin/spark-submit/spark-submit: Not a directory
+[2024-09-12T23:25:18.260+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 178, in execute
+    result = self.run_ssh_client_command(ssh_client, self.command, context=context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 166, in run_ssh_client_command
+    self.raise_for_status(exit_status, agg_stderr, context=context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 160, in raise_for_status
+    raise AirflowException(f"SSH operator error: exit status = {exit_status}")
+airflow.exceptions.AirflowException: SSH operator error: exit status = 126
+[2024-09-12T23:25:18.263+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=raw_ingestion, task_id=raw_ingestion, execution_date=20240912T232516, start_date=20240912T232517, end_date=20240912T232518
+[2024-09-12T23:25:18.277+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 34 for task raw_ingestion (SSH operator error: exit status = 126; 658)
+[2024-09-12T23:25:18.295+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-12T23:25:18.329+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
