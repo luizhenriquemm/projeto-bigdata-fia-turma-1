@@ -1,0 +1,7 @@
+[2024-09-13T00:09:10.174+0000] {processor.py:157} INFO - Started process (PID=1285) to work on /opt/airflow/dags/raw_ingestion copy.py
+[2024-09-13T00:09:10.176+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion copy.py for tasks to queue
+[2024-09-13T00:09:10.178+0000] {logging_mixin.py:154} INFO - [2024-09-13T00:09:10.177+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion copy.py
+[2024-09-13T00:09:10.212+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion']) retrieved from /opt/airflow/dags/raw_ingestion copy.py
+[2024-09-13T00:09:10.497+0000] {logging_mixin.py:154} INFO - [2024-09-13T00:09:10.496+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-13T00:09:10.527+0000] {logging_mixin.py:154} INFO - [2024-09-13T00:09:10.526+0000] {dag.py:3722} INFO - Setting next_dagrun for raw_ingestion to 2024-09-12T01:00:00+00:00, run_after=2024-09-13T01:00:00+00:00
+[2024-09-13T00:09:10.576+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion copy.py took 0.404 seconds

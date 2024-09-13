@@ -1,1 +1,2 @@
-containers-data/postgres/volume/base/*
+containers-data/postgres/volume/base/
+containers-data/mysql/db/*
