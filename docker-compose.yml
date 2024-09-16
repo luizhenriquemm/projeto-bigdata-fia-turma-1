@@ -303,6 +303,7 @@ services:
       - -c
       - |
         /env/start-ssh.sh
+        /env/start-env.sh
         /usr/local/spark/sbin/start-master.sh
         start-notebook.sh --NotebookApp.token=''
     ports:
@@ -333,6 +334,7 @@ services:
       - /bin/sh
       - -c
       - |
+        /env/start-env.sh
         /usr/local/spark/sbin/start-worker.sh spark-master:7077
         start-notebook.sh --NotebookApp.token='' 
     #command: /usr/local/spark/sbin/start-worker.sh jupyter-spark:7077
@@ -349,6 +351,7 @@ services:
       - 36533:36533
     volumes:
       - ./containers-data/util:/util
+      - ./containers-data/spark/env:/env 
       - ./containers-data/spark/work:/home/user 
       - ./containers-data/airflow/scripts:/opt/shared/scripts
     environment:

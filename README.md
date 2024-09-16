@@ -16,3 +16,15 @@ Comando para subir o docker:
 docker compose up -d
 ```
 
+### Portas uteis:
+
+  - 3000: Metabase
+  - 8889: Jupyter Lab
+  - 58080: Airflow Web Interface
+    - Usuário: admin
+    - Senha: admin
+  - 38080: Spark Master Web Interface
+  - 9051: Minio Web Interface
+    - Usuário: admin
+    - Senha: minioadmin
+  - 18080: Presto Web Interface
