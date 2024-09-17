@@ -19,6 +19,8 @@ docker compose up -d
 ### Portas uteis:
 
   - 3000: Metabase
+    - Usuário: admin
+    - Senha: admin
   - 8889: Jupyter Lab
   - 58080: Airflow Web Interface
     - Usuário: admin
