@@ -5,14 +5,14 @@ from airflow.providers.ssh.operators.ssh import SSHOperator
 
 default_args = {
     'owner': 'admin',
-    'start_date': datetime(2024, 9, 12),
-    'retries': 10,
-	'retry_delay': timedelta(hours=1)
+    'start_date': datetime(2024, 9, 17),
+    'retries': None,
+	'retry_delay': timedelta(minutes=15)
 }
 
 with airflow.DAG('raw_ingestion',
                   default_args=default_args,
-                  schedule_interval='0 1 * * *') as dag:
+                  schedule_interval='*/30 * * * *') as dag:
 
     task_raw_ingestion = SSHOperator(
         task_id='raw_ingestion',

@@ -1,0 +1,70 @@
+[2024-09-17T23:27:36.198+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: raw_ingestion.raw_ingestion scheduled__2024-09-17T10:00:00+00:00 [queued]>
+[2024-09-17T23:27:36.212+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: raw_ingestion.raw_ingestion scheduled__2024-09-17T10:00:00+00:00 [queued]>
+[2024-09-17T23:27:36.213+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 0
+[2024-09-17T23:27:36.242+0000] {taskinstance.py:1382} INFO - Executing <Task(SSHOperator): raw_ingestion> on 2024-09-17 10:00:00+00:00
+[2024-09-17T23:27:36.250+0000] {standard_task_runner.py:57} INFO - Started process 1330 to run task
+[2024-09-17T23:27:36.252+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'raw_ingestion', 'raw_ingestion', 'scheduled__2024-09-17T10:00:00+00:00', '--job-id', '92', '--raw', '--subdir', 'DAGS_FOLDER/raw_ingestion.py', '--cfg-path', '/tmp/tmpo5zwfaz2']
+[2024-09-17T23:27:36.253+0000] {standard_task_runner.py:85} INFO - Job 92: Subtask raw_ingestion
+[2024-09-17T23:27:36.451+0000] {task_command.py:416} INFO - Running <TaskInstance: raw_ingestion.raw_ingestion scheduled__2024-09-17T10:00:00+00:00 [running]> on host airflow-worker
+[2024-09-17T23:27:36.814+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='raw_ingestion' AIRFLOW_CTX_TASK_ID='raw_ingestion' AIRFLOW_CTX_EXECUTION_DATE='2024-09-17T10:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-17T10:00:00+00:00'
+[2024-09-17T23:27:36.815+0000] {ssh.py:141} INFO - Creating ssh_client
+[2024-09-17T23:27:36.817+0000] {ssh.py:114} INFO - ssh_hook is not provided or invalid. Trying ssh_conn_id to create SSHHook.
+[2024-09-17T23:27:36.892+0000] {base.py:73} INFO - Using connection ID 'spark_ssh_default' for task execution.
+[2024-09-17T23:27:36.896+0000] {ssh.py:300} WARNING - No Host Key Verification. This won't protect against Man-In-The-Middle attacks
+[2024-09-17T23:27:36.912+0000] {transport.py:1893} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2024-09-17T23:27:37.088+0000] {transport.py:1893} INFO - Authentication (password) successful!
+[2024-09-17T23:27:37.090+0000] {ssh.py:478} INFO - Running command: export SPARK_HOME=/usr/local/spark; /opt/conda/bin/spark-submit --master local[*] --executor-memory 2g /opt/shared/scripts/raw_ingestion.py
+[2024-09-17T23:27:45.694+0000] {ssh.py:524} INFO - 24/09/17 23:27:45 INFO SparkContext: Running Spark version 3.3.1
+[2024-09-17T23:27:45.915+0000] {ssh.py:524} INFO - 24/09/17 23:27:45 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-09-17T23:27:46.687+0000] {ssh.py:524} INFO - 24/09/17 23:27:46 INFO ResourceUtils: ==============================================================
+[2024-09-17T23:27:46.700+0000] {ssh.py:524} INFO - 24/09/17 23:27:46 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-09-17T23:27:46.710+0000] {ssh.py:524} INFO - 24/09/17 23:27:46 INFO ResourceUtils: ==============================================================
+[2024-09-17T23:27:46.713+0000] {ssh.py:524} INFO - 24/09/17 23:27:46 INFO SparkContext: Submitted application: load
+[2024-09-17T23:27:46.822+0000] {ssh.py:524} INFO - 24/09/17 23:27:46 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-09-17T23:27:46.903+0000] {ssh.py:524} INFO - 24/09/17 23:27:46 INFO ResourceProfile: Limiting resource is cpu
+[2024-09-17T23:27:46.920+0000] {ssh.py:524} INFO - 24/09/17 23:27:46 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-09-17T23:27:47.379+0000] {ssh.py:524} INFO - 24/09/17 23:27:47 INFO SecurityManager: Changing view acls to: root
+[2024-09-17T23:27:47.386+0000] {ssh.py:524} INFO - 24/09/17 23:27:47 INFO SecurityManager: Changing modify acls to: root
+[2024-09-17T23:27:47.393+0000] {ssh.py:524} INFO - 24/09/17 23:27:47 INFO SecurityManager: Changing view acls groups to: 
+[2024-09-17T23:27:47.400+0000] {ssh.py:524} INFO - 24/09/17 23:27:47 INFO SecurityManager: Changing modify acls groups to: 
+[2024-09-17T23:27:47.409+0000] {ssh.py:524} INFO - 24/09/17 23:27:47 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+[2024-09-17T23:27:49.431+0000] {ssh.py:524} INFO - 24/09/17 23:27:49 INFO Utils: Successfully started service 'sparkDriver' on port 42565.
+[2024-09-17T23:27:49.818+0000] {ssh.py:524} INFO - 24/09/17 23:27:49 INFO SparkEnv: Registering MapOutputTracker
+[2024-09-17T23:27:50.021+0000] {ssh.py:524} INFO - 24/09/17 23:27:50 INFO SparkEnv: Registering BlockManagerMaster
+[2024-09-17T23:27:50.098+0000] {ssh.py:524} INFO - 24/09/17 23:27:50 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-09-17T23:27:50.103+0000] {ssh.py:524} INFO - 24/09/17 23:27:50 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-09-17T23:27:50.118+0000] {ssh.py:524} INFO - 24/09/17 23:27:50 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-09-17T23:27:50.271+0000] {ssh.py:524} INFO - 24/09/17 23:27:50 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-251388cd-7460-47cc-b0b1-cbb2a83a5928
+[2024-09-17T23:27:50.476+0000] {ssh.py:524} INFO - 24/09/17 23:27:50 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2024-09-17T23:27:50.530+0000] {ssh.py:524} INFO - 24/09/17 23:27:50 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-09-17T23:27:51.751+0000] {ssh.py:524} INFO - 24/09/17 23:27:51 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+[2024-09-17T23:27:51.763+0000] {ssh.py:524} INFO - 24/09/17 23:27:51 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+[2024-09-17T23:27:51.766+0000] {ssh.py:524} INFO - 24/09/17 23:27:51 WARN Utils: Service 'SparkUI' could not bind on port 4042. Attempting port 4043.
+[2024-09-17T23:27:51.776+0000] {ssh.py:524} INFO - 24/09/17 23:27:51 WARN Utils: Service 'SparkUI' could not bind on port 4043. Attempting port 4044.
+[2024-09-17T23:27:51.777+0000] {ssh.py:524} INFO - 24/09/17 23:27:51 WARN Utils: Service 'SparkUI' could not bind on port 4044. Attempting port 4045.
+[2024-09-17T23:27:51.778+0000] {ssh.py:524} INFO - 24/09/17 23:27:51 WARN Utils: Service 'SparkUI' could not bind on port 4045. Attempting port 4046.
+[2024-09-17T23:27:51.811+0000] {ssh.py:524} INFO - 24/09/17 23:27:51 INFO Utils: Successfully started service 'SparkUI' on port 4046.
+[2024-09-17T23:27:52.384+0000] {ssh.py:524} INFO - 24/09/17 23:27:52 INFO Executor: Starting executor ID driver on host spark-master
+[2024-09-17T23:27:52.407+0000] {ssh.py:524} INFO - 24/09/17 23:27:52 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2024-09-17T23:27:52.459+0000] {ssh.py:524} INFO - 24/09/17 23:27:52 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38081.
+[2024-09-17T23:27:52.460+0000] {ssh.py:524} INFO - 24/09/17 23:27:52 INFO NettyBlockTransferService: Server created on spark-master:38081
+[2024-09-17T23:27:52.469+0000] {ssh.py:524} INFO - 24/09/17 23:27:52 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-09-17T23:27:52.472+0000] {ssh.py:524} INFO - 24/09/17 23:27:52 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 38081, None)
+[2024-09-17T23:27:52.478+0000] {ssh.py:524} INFO - 24/09/17 23:27:52 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:38081 with 434.4 MiB RAM, BlockManagerId(driver, spark-master, 38081, None)
+[2024-09-17T23:27:52.489+0000] {ssh.py:524} INFO - 24/09/17 23:27:52 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 38081, None)
+[2024-09-17T23:27:52.495+0000] {ssh.py:524} INFO - 24/09/17 23:27:52 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 38081, None)
+[2024-09-17T23:28:02.007+0000] {ssh.py:524} INFO - 24/09/17 23:28:01 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-09-17T23:28:02.181+0000] {ssh.py:524} INFO - 24/09/17 23:28:02 INFO SharedState: Warehouse path is 'file:/root/spark-warehouse'.
+[2024-09-17T23:28:12.278+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 178, in execute
+    result = self.run_ssh_client_command(ssh_client, self.command, context=context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 163, in run_ssh_client_command
+    exit_status, agg_stdout, agg_stderr = self.hook.exec_ssh_client_command(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/hooks/ssh.py", line 549, in exec_ssh_client_command
+    raise AirflowException("SSH command timed out")
+airflow.exceptions.AirflowException: SSH command timed out
+[2024-09-17T23:28:12.296+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=raw_ingestion, task_id=raw_ingestion, execution_date=20240917T100000, start_date=20240917T232736, end_date=20240917T232812
+[2024-09-17T23:28:12.344+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 92 for task raw_ingestion (SSH command timed out; 1330)
+[2024-09-17T23:28:12.394+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-17T23:28:12.509+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

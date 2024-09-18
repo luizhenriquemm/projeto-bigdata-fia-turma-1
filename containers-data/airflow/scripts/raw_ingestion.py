@@ -1,5 +1,5 @@
-import requests
-from pyspark.sql import SparkSession
+import requests, json, time
+from pyspark.sql import SparkSession, Row
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
 
@@ -49,6 +49,19 @@ def callAPIGet(api_url, session):
         # Feche a sessão após o uso
         session.close()
 
+def obterPrevisaoParada(stop_id, session):
+    while True:
+        r = session.get(f"https://api.olhovivo.sptrans.com.br/v2.1/Previsao/Parada?codigoParada={stop_id}")
+
+        if r.status_code == 200:
+            return {"stop_id": stop_id, **r.json()}
+
+        elif r.status_code == 429:
+            time.sleep(60)
+            
+        else:
+            return None
+
 corredor_schema = StructType([
     StructField("cc", IntegerType(), True),
     StructField("nc", StringType(), True)
@@ -82,10 +95,34 @@ posicao_schema = StructType([
             StructField("py", FloatType(), True),
             StructField("px", FloatType(), True)
         ])), True),
-    ])), True),
+    ])), True)
 ])
 
-# linhas = spark.read.csv("s3a://raw/GTFS/linhas/*.txt", header=True)
+previsao_schema = StructType([
+    StructField("stop_id", StringType(), True),
+    StructField("hr", StringType(), True),
+    StructField("p", ArrayType(StructType([
+        StructField("cp", LongType(), True),
+        StructField("np", StringType(), True),
+        StructField("py", FloatType(), True),
+        StructField("px", FloatType(), True),
+            StructField("l", ArrayType(StructType([
+            StructField("c", StringType(), True),
+            StructField("cl", IntegerType(), True),
+            StructField("sl", IntegerType(), True),
+            StructField("lt0", StringType(), True),
+            StructField("lt1", StringType(), True),
+            StructField("qv", IntegerType(), True),
+            StructField("vs", ArrayType(StructType([
+                StructField("p", IntegerType(), True),
+                StructField("a", BooleanType(), True),
+                StructField("ta", StringType(), True),
+                StructField("py", FloatType(), True),
+                StructField("px", FloatType(), True)
+            ])), True),
+        ])), True)
+    ])), True)
+])
 
 session = autenticar()
 
@@ -101,5 +138,10 @@ posicao = callAPIGet("https://api.olhovivo.sptrans.com.br/v2.1/Posicao", session
 posicao_df = spark.createDataFrame(posicao, posicao_schema)
 posicao_df.write.mode("append").format("json").save("s3a://raw/olhovivo/Posicao/")
 
+paradas = spark.read.csv("s3a://raw/GTFS/paradas/*.txt", header=True)
+paradas_rdd = paradas.filter("stop_desc is not null").select("stop_id").rdd
 
-# Previsão de chegada
+previsao = paradas_rdd.map(lambda x: x.asDict()["stop_id"]).map(lambda x: obterPrevisaoParada(x, session)).map(lambda x: Row(val=json.dumps(x)))
+
+previsao_df = spark.createDataFrame(previsao, previsao_schema)
+previsao_df.show(truncate=False)

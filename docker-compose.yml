@@ -242,14 +242,14 @@ services:
     hostname: metastore
     platform: linux/amd64
     image: fjardim/mds-hive-metastore
-    #image: apache/hive:4.0.0-beta-1
+    # image: apache/hive:4.0.0-beta-1
     container_name: metastore
     environment:
       AWS_ACCESS_KEY_ID: datalake
       AWS_SECRET_ACCESS_KEY: datalake
       HIVE_CUSTOM_CONF_DIR: "/hive_custom_conf"
       SERVICE_NAME: metastore
-      #SERVICE_OPTS: "-Dhive.metastore.uris=thrift://metastore:9083" 
+      # SERVICE_OPTS: "-Dhive.metastore.uris=thrift://metastore:9083" 
       IS_RESUME: "true"
       DB_DRIVER: postgres 
       SERVICE_OPTS: "-Djavax.jdo.option.ConnectionDriverName=org.postgresql.Driver -Djavax.jdo.option.ConnectionURL=jdbc:postgresql://db:5432/metastore -Djavax.jdo.option.ConnectionUserName=admin -Djavax.jdo.option.ConnectionPassword=admin" 
@@ -257,7 +257,6 @@ services:
        - "9083:9083"
     depends_on:
         - db
-          
     user: root
     volumes:
        - ./containers-data/hive/meta:/opt/hive/data/warehouse 
