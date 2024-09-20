@@ -1,9 +1,20 @@
-import requests, json, time
+import requests, json, time, sys
 from pyspark.sql import SparkSession, Row
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
 
-spark = SparkSession.builder.appName('load').enableHiveSupport().getOrCreate()
+dt_now = sys.argv[1]
+print("[DEBUG] dt_now: " + str(dt_now))
+
+spark = (SparkSession.builder
+             .appName('raw_ingestion') # Name the app
+             .config("hive.metastore.uris", "thrift://metastore:9083") # Set external Hive Metastore
+             .config("hive.metastore.schema.verification", "false") # Prevent some errors
+             .config("spark.sql.repl.eagerEval.enabled", True)
+             .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
+             .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
+             .enableHiveSupport()
+             .getOrCreate())
 
 def autenticar():
     # endpoint da API para autenticar
@@ -101,12 +112,12 @@ posicao_schema = StructType([
 previsao_schema = StructType([
     StructField("stop_id", StringType(), True),
     StructField("hr", StringType(), True),
-    StructField("p", ArrayType(StructType([
+    StructField("p", StructType([
         StructField("cp", LongType(), True),
         StructField("np", StringType(), True),
         StructField("py", FloatType(), True),
         StructField("px", FloatType(), True),
-            StructField("l", ArrayType(StructType([
+        StructField("l", ArrayType(StructType([
             StructField("c", StringType(), True),
             StructField("cl", IntegerType(), True),
             StructField("sl", IntegerType(), True),
@@ -114,34 +125,35 @@ previsao_schema = StructType([
             StructField("lt1", StringType(), True),
             StructField("qv", IntegerType(), True),
             StructField("vs", ArrayType(StructType([
-                StructField("p", IntegerType(), True),
+                StructField("p", StringType(), True),
                 StructField("a", BooleanType(), True),
                 StructField("ta", StringType(), True),
                 StructField("py", FloatType(), True),
                 StructField("px", FloatType(), True)
             ])), True),
         ])), True)
-    ])), True)
+    ]), True)
 ])
 
 session = autenticar()
 
 corredor = callAPIGet("https://api.olhovivo.sptrans.com.br/v2.1/Corredor", session)
 corredor_df = spark.createDataFrame(corredor, corredor_schema)
-corredor_df.write.mode("append").format("json").save("s3a://raw/olhovivo/corredor/")
+corredor_df.write.mode("append").format("json").save(f"s3a://raw/olhovivo/corredor/dt={dt_now}/")
 
 empresa = callAPIGet("https://api.olhovivo.sptrans.com.br/v2.1/Empresa", session)
 empresa_df = spark.createDataFrame(empresa, empresa_schema)
-empresa_df.write.mode("append").format("json").save("s3a://raw/olhovivo/empresa/")
+empresa_df.write.mode("append").format("json").save(f"s3a://raw/olhovivo/empresa/dt={dt_now}/")
 
 posicao = callAPIGet("https://api.olhovivo.sptrans.com.br/v2.1/Posicao", session)
 posicao_df = spark.createDataFrame(posicao, posicao_schema)
-posicao_df.write.mode("append").format("json").save("s3a://raw/olhovivo/Posicao/")
+posicao_df.write.mode("append").format("json").save(f"s3a://raw/olhovivo/posicao/dt={dt_now}/")
 
 paradas = spark.read.csv("s3a://raw/GTFS/paradas/*.txt", header=True)
 paradas_rdd = paradas.filter("stop_desc is not null").select("stop_id").rdd
-
-previsao = paradas_rdd.map(lambda x: x.asDict()["stop_id"]).map(lambda x: obterPrevisaoParada(x, session)).map(lambda x: Row(val=json.dumps(x)))
-
-previsao_df = spark.createDataFrame(previsao, previsao_schema)
-previsao_df.show(truncate=False)
+previsao = paradas_rdd.map(lambda x: x.asDict()["stop_id"]).map(lambda x: obterPrevisaoParada(x, session)).map(lambda x: Row(data=json.dumps(x)))
+previsao_df = spark.createDataFrame(previsao, StructType([StructField("data", StringType(), True)]))
+previsao_df.write.mode("overwrite").format("parquet").save("s3a://raw/olhovivo/paradas_unparsed/")  # Etapa intermediaria
+previsao_df = spark.read.parquet("s3a://raw/olhovivo/paradas_unparsed/")
+previsao_parsed_df = previsao_df.select(from_json("data", previsao_schema).alias("data")).select("data.*")
+previsao_parsed_df.write.mode("append").format("json").save(f"s3a://raw/olhovivo/previsao/dt={dt_now}/")
