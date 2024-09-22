@@ -4,10 +4,16 @@ from pyspark.sql.functions import *
 from pyspark.sql.types import *
 
 dt_now = sys.argv[1]
+endpoint = sys.argv[2]
+app_name = "raw_ingestion_" + str(endpoint)
+if endpoint == "":
+    endpoint = None
+    app_name = "raw_ingestion"
 print("[DEBUG] dt_now: " + str(dt_now))
+print("[DEBUG] endpoint: " + str(endpoint))
 
 spark = (SparkSession.builder
-             .appName('raw_ingestion') # Name the app
+             .appName(app_name) # Name the app
              .config("hive.metastore.uris", "thrift://metastore:9083") # Set external Hive Metastore
              .config("hive.metastore.schema.verification", "false") # Prevent some errors
              .config("spark.sql.repl.eagerEval.enabled", True)
@@ -137,23 +143,30 @@ previsao_schema = StructType([
 
 session = autenticar()
 
-corredor = callAPIGet("https://api.olhovivo.sptrans.com.br/v2.1/Corredor", session)
-corredor_df = spark.createDataFrame(corredor, corredor_schema)
-corredor_df.write.mode("append").format("json").save(f"s3a://raw/olhovivo/corredor/dt={dt_now}/")
+if endpoint == "corredor" or endpoint is None:
+    corredor = callAPIGet("https://api.olhovivo.sptrans.com.br/v2.1/Corredor", session)
+    corredor_df = spark.createDataFrame(corredor, corredor_schema)
+    corredor_df.write.mode("append").format("json").save(f"s3a://raw/olhovivo/corredor/dt={dt_now}/")
 
-empresa = callAPIGet("https://api.olhovivo.sptrans.com.br/v2.1/Empresa", session)
-empresa_df = spark.createDataFrame(empresa, empresa_schema)
-empresa_df.write.mode("append").format("json").save(f"s3a://raw/olhovivo/empresa/dt={dt_now}/")
+if endpoint == "empresa" or endpoint is None:
+    empresa = callAPIGet("https://api.olhovivo.sptrans.com.br/v2.1/Empresa", session)
+    empresa_df = spark.createDataFrame(empresa, empresa_schema)
+    empresa_df.write.mode("append").format("json").save(f"s3a://raw/olhovivo/empresa/dt={dt_now}/")
 
-posicao = callAPIGet("https://api.olhovivo.sptrans.com.br/v2.1/Posicao", session)
-posicao_df = spark.createDataFrame(posicao, posicao_schema)
-posicao_df.write.mode("append").format("json").save(f"s3a://raw/olhovivo/posicao/dt={dt_now}/")
+if endpoint == "posicao" or endpoint is None:
+    posicao = callAPIGet("https://api.olhovivo.sptrans.com.br/v2.1/Posicao", session)
+    posicao_df = spark.createDataFrame(posicao, posicao_schema)
+    posicao_df.write.mode("append").format("json").save(f"s3a://raw/olhovivo/posicao/dt={dt_now}/")
 
-paradas = spark.read.csv("s3a://raw/GTFS/paradas/*.txt", header=True)
-paradas_rdd = paradas.filter("stop_desc is not null").select("stop_id").rdd
-previsao = paradas_rdd.map(lambda x: x.asDict()["stop_id"]).map(lambda x: obterPrevisaoParada(x, session)).map(lambda x: Row(data=json.dumps(x)))
-previsao_df = spark.createDataFrame(previsao, StructType([StructField("data", StringType(), True)]))
-previsao_df.write.mode("overwrite").format("parquet").save("s3a://raw/olhovivo/paradas_unparsed/")  # Etapa intermediaria
-previsao_df = spark.read.parquet("s3a://raw/olhovivo/paradas_unparsed/")
-previsao_parsed_df = previsao_df.select(from_json("data", previsao_schema).alias("data")).select("data.*")
-previsao_parsed_df.write.mode("append").format("json").save(f"s3a://raw/olhovivo/previsao/dt={dt_now}/")
+if endpoint == "previsao" or endpoint is None:
+    paradas = spark.read.csv("s3a://raw/GTFS/paradas/*.txt", header=True)
+    paradas_rdd = paradas.filter("stop_desc is not null").select("stop_id").rdd
+    previsao = paradas_rdd.map(lambda x: x.asDict()["stop_id"]).map(lambda x: obterPrevisaoParada(x, session)).map(lambda x: Row(data=json.dumps(x)))
+    previsao_df = spark.createDataFrame(previsao, StructType([StructField("data", StringType(), True)]))
+    previsao_df.write.mode("overwrite").format("parquet").save("s3a://raw/olhovivo/paradas_unparsed/")  # Etapa intermediaria
+    print("[DEBUG] previsao_df count is " + str(previsao_df.count()))
+    previsao_df = spark.read.schema(StructType([StructField("data", StringType(), True)])).parquet("s3a://raw/olhovivo/paradas_unparsed/")
+    previsao_parsed_df = previsao_df.select(from_json("data", previsao_schema).alias("data")).select("data.*")
+    previsao_parsed_df.write.mode("append").format("json").save(f"s3a://raw/olhovivo/previsao/dt={dt_now}/")
+
+print("[DEBUG] Done.")

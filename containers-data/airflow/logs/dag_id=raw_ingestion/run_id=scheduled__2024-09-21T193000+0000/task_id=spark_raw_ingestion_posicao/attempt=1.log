@@ -1,0 +1,29 @@
+[2024-09-21T20:20:01.416+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: raw_ingestion.spark_raw_ingestion_posicao scheduled__2024-09-21T19:30:00+00:00 [queued]>
+[2024-09-21T20:20:01.461+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: raw_ingestion.spark_raw_ingestion_posicao scheduled__2024-09-21T19:30:00+00:00 [queued]>
+[2024-09-21T20:20:01.476+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 0
+[2024-09-21T20:20:01.552+0000] {taskinstance.py:1382} INFO - Executing <Task(SSHOperator): spark_raw_ingestion_posicao> on 2024-09-21 19:30:00+00:00
+[2024-09-21T20:20:01.570+0000] {standard_task_runner.py:57} INFO - Started process 400 to run task
+[2024-09-21T20:20:01.573+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'raw_ingestion', 'spark_raw_ingestion_posicao', 'scheduled__2024-09-21T19:30:00+00:00', '--job-id', '335', '--raw', '--subdir', 'DAGS_FOLDER/raw_ingestion.py', '--cfg-path', '/tmp/tmpsjj_4ic6']
+[2024-09-21T20:20:01.581+0000] {standard_task_runner.py:85} INFO - Job 335: Subtask spark_raw_ingestion_posicao
+[2024-09-21T20:20:02.267+0000] {task_command.py:416} INFO - Running <TaskInstance: raw_ingestion.spark_raw_ingestion_posicao scheduled__2024-09-21T19:30:00+00:00 [running]> on host airflow-worker
+[2024-09-21T20:20:03.285+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='raw_ingestion' AIRFLOW_CTX_TASK_ID='spark_raw_ingestion_posicao' AIRFLOW_CTX_EXECUTION_DATE='2024-09-21T19:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-21T19:30:00+00:00'
+[2024-09-21T20:20:03.302+0000] {ssh.py:141} INFO - Creating ssh_client
+[2024-09-21T20:20:03.304+0000] {ssh.py:114} INFO - ssh_hook is not provided or invalid. Trying ssh_conn_id to create SSHHook.
+[2024-09-21T20:20:03.560+0000] {base.py:73} INFO - Using connection ID 'spark_ssh_default' for task execution.
+[2024-09-21T20:20:03.566+0000] {ssh.py:300} WARNING - No Host Key Verification. This won't protect against Man-In-The-Middle attacks
+[2024-09-21T20:20:03.603+0000] {transport.py:1893} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2024-09-21T20:20:06.024+0000] {transport.py:1893} INFO - Authentication (password) successful!
+[2024-09-21T20:20:06.026+0000] {ssh.py:478} INFO - Running command: export SPARK_HOME=/usr/local/spark; /opt/conda/bin/spark-submit --master local[*] --executor-memory 2g /opt/shared/scripts/raw_ingestion.py 2024-09-21 posicao
+[2024-09-21T20:20:17.063+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 178, in execute
+    result = self.run_ssh_client_command(ssh_client, self.command, context=context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 163, in run_ssh_client_command
+    exit_status, agg_stdout, agg_stderr = self.hook.exec_ssh_client_command(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/hooks/ssh.py", line 549, in exec_ssh_client_command
+    raise AirflowException("SSH command timed out")
+airflow.exceptions.AirflowException: SSH command timed out
+[2024-09-21T20:20:17.074+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=raw_ingestion, task_id=spark_raw_ingestion_posicao, execution_date=20240921T193000, start_date=20240921T202001, end_date=20240921T202017
+[2024-09-21T20:20:17.115+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 335 for task spark_raw_ingestion_posicao (SSH command timed out; 400)
+[2024-09-21T20:20:17.147+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-21T20:20:17.249+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

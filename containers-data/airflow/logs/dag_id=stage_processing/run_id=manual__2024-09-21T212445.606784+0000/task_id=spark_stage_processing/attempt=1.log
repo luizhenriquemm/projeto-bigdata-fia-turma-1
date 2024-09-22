@@ -1,0 +1,41 @@
+[2024-09-21T21:24:46.389+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stage_processing.spark_stage_processing manual__2024-09-21T21:24:45.606784+00:00 [queued]>
+[2024-09-21T21:24:46.397+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stage_processing.spark_stage_processing manual__2024-09-21T21:24:45.606784+00:00 [queued]>
+[2024-09-21T21:24:46.397+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 0
+[2024-09-21T21:24:46.412+0000] {taskinstance.py:1382} INFO - Executing <Task(SSHOperator): spark_stage_processing> on 2024-09-21 21:24:45.606784+00:00
+[2024-09-21T21:24:46.416+0000] {standard_task_runner.py:57} INFO - Started process 1043 to run task
+[2024-09-21T21:24:46.419+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'stage_processing', 'spark_stage_processing', 'manual__2024-09-21T21:24:45.606784+00:00', '--job-id', '386', '--raw', '--subdir', 'DAGS_FOLDER/stage_processing.py', '--cfg-path', '/tmp/tmpk9bq9xn8']
+[2024-09-21T21:24:46.419+0000] {standard_task_runner.py:85} INFO - Job 386: Subtask spark_stage_processing
+[2024-09-21T21:24:46.514+0000] {task_command.py:416} INFO - Running <TaskInstance: stage_processing.spark_stage_processing manual__2024-09-21T21:24:45.606784+00:00 [running]> on host airflow-worker
+[2024-09-21T21:24:46.666+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stage_processing' AIRFLOW_CTX_TASK_ID='spark_stage_processing' AIRFLOW_CTX_EXECUTION_DATE='2024-09-21T21:24:45.606784+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-21T21:24:45.606784+00:00'
+[2024-09-21T21:24:46.667+0000] {ssh.py:141} INFO - Creating ssh_client
+[2024-09-21T21:24:46.667+0000] {ssh.py:114} INFO - ssh_hook is not provided or invalid. Trying ssh_conn_id to create SSHHook.
+[2024-09-21T21:24:46.692+0000] {base.py:73} INFO - Using connection ID 'spark_ssh_default' for task execution.
+[2024-09-21T21:24:46.693+0000] {ssh.py:300} WARNING - No Host Key Verification. This won't protect against Man-In-The-Middle attacks
+[2024-09-21T21:24:46.700+0000] {transport.py:1893} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2024-09-21T21:24:46.799+0000] {transport.py:1893} INFO - Authentication (password) successful!
+[2024-09-21T21:24:46.800+0000] {ssh.py:478} INFO - Running command: export SPARK_HOME=/usr/local/spark; /opt/conda/bin/spark-submit --master local[*] --executor-memory 2g --conf "spark.pyspark.python=/env/venv/bin/python" /opt/shared/scripts/stage_processing.py 2024-09-21
+[2024-09-21T21:24:49.467+0000] {ssh.py:524} INFO - Traceback (most recent call last):
+[2024-09-21T21:24:49.468+0000] {ssh.py:524} INFO -   File "/opt/shared/scripts/stage_processing.py", line 5, in <module>
+[2024-09-21T21:24:49.469+0000] {ssh.py:524} INFO -     from delta import DeltaTable
+[2024-09-21T21:24:49.469+0000] {ssh.py:524} INFO -   File "/env/venv/lib/python3.10/site-packages/delta/__init__.py", line 17, in <module>
+[2024-09-21T21:24:49.471+0000] {ssh.py:524} INFO -     from delta.tables import DeltaTable
+[2024-09-21T21:24:49.471+0000] {ssh.py:524} INFO -   File "/env/venv/lib/python3.10/site-packages/delta/tables.py", line 21, in <module>
+[2024-09-21T21:24:49.473+0000] {ssh.py:524} INFO -     import delta.exceptions  # noqa: F401; pylint: disable=unused-variable
+[2024-09-21T21:24:49.474+0000] {ssh.py:524} INFO -   File "/env/venv/lib/python3.10/site-packages/delta/exceptions.py", line 20, in <module>
+[2024-09-21T21:24:49.475+0000] {ssh.py:524} INFO -     from pyspark.errors.exceptions import captured
+[2024-09-21T21:24:49.476+0000] {ssh.py:524} INFO - ModuleNotFoundError: No module named 'pyspark.errors'
+[2024-09-21T21:24:49.504+0000] {ssh.py:524} INFO - 24/09/21 21:24:49 INFO ShutdownHookManager: Shutdown hook called
+[2024-09-21T21:24:49.505+0000] {ssh.py:524} INFO - 24/09/21 21:24:49 INFO ShutdownHookManager: Deleting directory /tmp/spark-7f20390a-786e-4112-93d8-7beceb7d7da8
+[2024-09-21T21:24:49.590+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 178, in execute
+    result = self.run_ssh_client_command(ssh_client, self.command, context=context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 166, in run_ssh_client_command
+    self.raise_for_status(exit_status, agg_stderr, context=context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 160, in raise_for_status
+    raise AirflowException(f"SSH operator error: exit status = {exit_status}")
+airflow.exceptions.AirflowException: SSH operator error: exit status = 1
+[2024-09-21T21:24:49.593+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=stage_processing, task_id=spark_stage_processing, execution_date=20240921T212445, start_date=20240921T212446, end_date=20240921T212449
+[2024-09-21T21:24:49.609+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 386 for task spark_stage_processing (SSH operator error: exit status = 1; 1043)
+[2024-09-21T21:24:49.639+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-21T21:24:49.674+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

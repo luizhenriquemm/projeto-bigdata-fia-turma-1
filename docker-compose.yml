@@ -75,7 +75,7 @@ services:
     hostname: airflow-webserver
     command: webserver
     ports:
-      - "58080:8080"
+      - "48080:8080"
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
       interval: 30s
@@ -193,11 +193,11 @@ services:
     depends_on:
       - metastore
 
-    deploy:
-      resources:
-        limits:
-          memory: 2g
-          #cpus: '0.2'
+    # deploy:
+    #   resources:
+    #     limits:
+    #       memory: 2g
+    #       #cpus: '0.2'
 
   db:
     image: postgres
@@ -319,10 +319,10 @@ services:
       - ./containers-data/spark/env:/env 
       - ./containers-data/util:/util
       - ./containers-data/airflow/scripts:/opt/shared/scripts
-    deploy:
-      resources:
-        limits:
-          memory: 2g
+    # deploy:
+    #   resources:
+    #     limits:
+    #       memory: 8g
 
   spark-worker:
     image: fjardim/mds-spark
@@ -357,10 +357,10 @@ services:
       SPARK_MASTER: spark-master
     depends_on:
         - spark-master
-    deploy:
-      resources:
-        limits:
-          memory: 1g
+    # deploy:
+    #   resources:
+    #     limits:
+    #       memory: 8g
 
 ##################################################
 ### EDA

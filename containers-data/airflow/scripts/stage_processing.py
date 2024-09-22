@@ -40,6 +40,8 @@ deltaTable.alias('destiny') \
     .whenNotMatchedInsertAll() \
     .execute()
 
+deltaTable.optimize()
+
 
 # Paradas
 df_paradas = spark.read.csv("s3a://raw/GTFS/paradas", header=True)
@@ -60,6 +62,8 @@ deltaTable.alias('destiny') \
     .whenNotMatchedInsertAll() \
     .execute()
 
+deltaTable.optimize()
+
 
 # Trips
 df_trips = spark.read.csv("s3a://raw/GTFS/trips",header=True)
@@ -79,6 +83,8 @@ deltaTable.alias('destiny') \
     .whenMatchedUpdateAll() \
     .whenNotMatchedInsertAll() \
     .execute()
+
+deltaTable.optimize()
 
 
 # Corredores
@@ -103,6 +109,9 @@ deltaTable.alias('destiny') \
     .whenMatchedUpdateAll() \
     .whenNotMatchedInsertAll() \
     .execute()
+
+deltaTable.optimize()
+
 
 # Empresas
 df_empresa = spark.read.json(f"s3a://raw/olhovivo/empresa/dt={dt_now}/")
@@ -130,6 +139,8 @@ deltaTable.alias('destiny') \
     .whenNotMatchedInsertAll() \
     .execute()
 
+deltaTable.optimize()
+
 
 # Posição
 df_posicao = spark.read.json(f"s3a://raw/olhovivo/posicao/dt={dt_now}/")
@@ -137,22 +148,29 @@ df_posicao = df_posicao.select(
                     col('hr').alias('Hora')
                     ,explode('l').alias('Linha'))
 
+window_spec = Window.partitionBy("Linha.cl").orderBy(col("Hora").desc())
+df_posicao_tratado = df_posicao.withColumn("row_num", row_number().over(window_spec)) \
+                       .filter(col("row_num") == 1) \
+                       .drop("row_num")
+
 DeltaTable.createIfNotExists(spark) \
     .tableName("stage.posicao")\
-    .addColumns(df_posicao.schema)\
+    .addColumns(df_posicao_tratado.schema)\
     .execute()
 
 deltaTable = DeltaTable.forName(spark, "stage.posicao")
 
 deltaTable.alias('destiny') \
     .merge(
-        df_posicao.alias('source'),
+        df_posicao_tratado.alias('source'),
         'source.Linha.cl = destiny.Linha.cl and source.Linha.sl = destiny.Linha.sl'
     ) \
     .whenMatchedUpdateAll() \
     .whenNotMatchedInsertAll() \
     .execute()
 
+deltaTable.optimize()
+
 
 # Previsao
-df_previsao = spark.read.json(f"s3a://raw/olhovivo/previsao/dt={dt_now}/")
+# df_previsao = spark.read.json(f"s3a://raw/olhovivo/previsao/dt={dt_now}/")

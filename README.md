@@ -19,10 +19,10 @@ docker compose up -d
 ### Portas uteis:
 
   - 3000: Metabase
-    - Usuário: admin
-    - Senha: admin
+    - Usuário: user@datalab.com.br
+    - Senha: datalab
   - 8889: Jupyter Lab
-  - 58080: Airflow Web Interface
+  - 48080: Airflow Web Interface
     - Usuário: admin
     - Senha: admin
   - 38080: Spark Master Web Interface

@@ -1,0 +1,193 @@
+[2024-09-21T22:15:12.288+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: raw_ingestion.spark_raw_ingestion_previsao manual__2024-09-21T22:15:11.318217+00:00 [queued]>
+[2024-09-21T22:15:12.300+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: raw_ingestion.spark_raw_ingestion_previsao manual__2024-09-21T22:15:11.318217+00:00 [queued]>
+[2024-09-21T22:15:12.301+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 0
+[2024-09-21T22:15:12.317+0000] {taskinstance.py:1382} INFO - Executing <Task(SSHOperator): spark_raw_ingestion_previsao> on 2024-09-21 22:15:11.318217+00:00
+[2024-09-21T22:15:12.322+0000] {standard_task_runner.py:57} INFO - Started process 1936 to run task
+[2024-09-21T22:15:12.325+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'raw_ingestion', 'spark_raw_ingestion_previsao', 'manual__2024-09-21T22:15:11.318217+00:00', '--job-id', '420', '--raw', '--subdir', 'DAGS_FOLDER/raw_ingestion.py', '--cfg-path', '/tmp/tmpa5utbd0x']
+[2024-09-21T22:15:12.326+0000] {standard_task_runner.py:85} INFO - Job 420: Subtask spark_raw_ingestion_previsao
+[2024-09-21T22:15:12.455+0000] {task_command.py:416} INFO - Running <TaskInstance: raw_ingestion.spark_raw_ingestion_previsao manual__2024-09-21T22:15:11.318217+00:00 [running]> on host airflow-worker
+[2024-09-21T22:15:12.672+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='raw_ingestion' AIRFLOW_CTX_TASK_ID='spark_raw_ingestion_previsao' AIRFLOW_CTX_EXECUTION_DATE='2024-09-21T22:15:11.318217+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-21T22:15:11.318217+00:00'
+[2024-09-21T22:15:12.673+0000] {ssh.py:141} INFO - Creating ssh_client
+[2024-09-21T22:15:12.673+0000] {ssh.py:114} INFO - ssh_hook is not provided or invalid. Trying ssh_conn_id to create SSHHook.
+[2024-09-21T22:15:12.704+0000] {base.py:73} INFO - Using connection ID 'spark_ssh_default' for task execution.
+[2024-09-21T22:15:12.705+0000] {ssh.py:300} WARNING - No Host Key Verification. This won't protect against Man-In-The-Middle attacks
+[2024-09-21T22:15:12.713+0000] {transport.py:1893} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2024-09-21T22:15:12.792+0000] {transport.py:1893} INFO - Authentication (password) successful!
+[2024-09-21T22:15:12.793+0000] {ssh.py:478} INFO - Running command: export SPARK_HOME=/usr/local/spark; /opt/conda/bin/spark-submit --master local[*] --driver-cores 6 --executor-cores 6 --driver-memory 16G --executor-memory 16G /opt/shared/scripts/raw_ingestion.py 2024-09-21 previsao
+[2024-09-21T22:15:15.502+0000] {ssh.py:524} INFO - [DEBUG] dt_now: 2024-09-21
+[2024-09-21T22:15:15.502+0000] {ssh.py:524} INFO - [DEBUG] endpoint: previsao
+[2024-09-21T22:15:15.586+0000] {ssh.py:524} INFO - 24/09/21 22:15:15 INFO SparkContext: Running Spark version 3.3.1
+[2024-09-21T22:15:15.610+0000] {ssh.py:524} INFO - 24/09/21 22:15:15 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-09-21T22:15:15.709+0000] {ssh.py:524} INFO - 24/09/21 22:15:15 INFO ResourceUtils: ==============================================================
+[2024-09-21T22:15:15.709+0000] {ssh.py:524} INFO - 24/09/21 22:15:15 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-09-21T22:15:15.710+0000] {ssh.py:524} INFO - 24/09/21 22:15:15 INFO ResourceUtils: ==============================================================
+[2024-09-21T22:15:15.711+0000] {ssh.py:524} INFO - 24/09/21 22:15:15 INFO SparkContext: Submitted application: raw_ingestion_previsao
+[2024-09-21T22:15:15.734+0000] {ssh.py:524} INFO - 24/09/21 22:15:15 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-09-21T22:15:15.743+0000] {ssh.py:524} INFO - 24/09/21 22:15:15 INFO ResourceProfile: Limiting resource is cpu
+[2024-09-21T22:15:15.744+0000] {ssh.py:524} INFO - 24/09/21 22:15:15 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-09-21T22:15:15.786+0000] {ssh.py:524} INFO - 24/09/21 22:15:15 INFO SecurityManager: Changing view acls to: root
+[2024-09-21T22:15:15.787+0000] {ssh.py:524} INFO - 24/09/21 22:15:15 INFO SecurityManager: Changing modify acls to: root
+[2024-09-21T22:15:15.787+0000] {ssh.py:524} INFO - 24/09/21 22:15:15 INFO SecurityManager: Changing view acls groups to: 
+[2024-09-21T22:15:15.788+0000] {ssh.py:524} INFO - 24/09/21 22:15:15 INFO SecurityManager: Changing modify acls groups to: 
+[2024-09-21T22:15:15.789+0000] {ssh.py:524} INFO - 24/09/21 22:15:15 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+[2024-09-21T22:15:16.212+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO Utils: Successfully started service 'sparkDriver' on port 35811.
+[2024-09-21T22:15:16.294+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO SparkEnv: Registering MapOutputTracker
+[2024-09-21T22:15:16.350+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO SparkEnv: Registering BlockManagerMaster
+[2024-09-21T22:15:16.368+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-09-21T22:15:16.369+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-09-21T22:15:16.374+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-09-21T22:15:16.395+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-8e9c9e3b-5817-4486-a9e4-b9cb3166ddec
+[2024-09-21T22:15:16.411+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO MemoryStore: MemoryStore started with capacity 9.4 GiB
+[2024-09-21T22:15:16.428+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-09-21T22:15:16.624+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+[2024-09-21T22:15:16.625+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+[2024-09-21T22:15:16.625+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 WARN Utils: Service 'SparkUI' could not bind on port 4042. Attempting port 4043.
+[2024-09-21T22:15:16.634+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO Utils: Successfully started service 'SparkUI' on port 4043.
+[2024-09-21T22:15:16.762+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO Executor: Starting executor ID driver on host spark-master
+[2024-09-21T22:15:16.772+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2024-09-21T22:15:16.798+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39387.
+[2024-09-21T22:15:16.798+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO NettyBlockTransferService: Server created on spark-master:39387
+[2024-09-21T22:15:16.799+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-09-21T22:15:16.804+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 39387, None)
+[2024-09-21T22:15:16.807+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:39387 with 9.4 GiB RAM, BlockManagerId(driver, spark-master, 39387, None)
+[2024-09-21T22:15:16.808+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 39387, None)
+[2024-09-21T22:15:16.809+0000] {ssh.py:524} INFO - 24/09/21 22:15:16 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 39387, None)
+[2024-09-21T22:15:17.297+0000] {ssh.py:524} INFO - 24/09/21 22:15:17 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-09-21T22:15:17.302+0000] {ssh.py:524} INFO - 24/09/21 22:15:17 INFO SharedState: Warehouse path is 'file:/root/spark-warehouse'.
+[2024-09-21T22:15:17.940+0000] {ssh.py:524} INFO - 24/09/21 22:15:17 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[2024-09-21T22:15:17.951+0000] {ssh.py:524} INFO - 24/09/21 22:15:17 INFO MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+[2024-09-21T22:15:17.952+0000] {ssh.py:524} INFO - 24/09/21 22:15:17 INFO MetricsSystemImpl: s3a-file-system metrics system started
+[2024-09-21T22:15:18.900+0000] {ssh.py:524} INFO - 24/09/21 22:15:18 INFO InMemoryFileIndex: It took 62 ms to list leaf files for 1 paths.
+[2024-09-21T22:15:18.980+0000] {ssh.py:524} INFO - 24/09/21 22:15:18 INFO InMemoryFileIndex: It took 11 ms to list leaf files for 1 paths.
+[2024-09-21T22:15:20.999+0000] {ssh.py:524} INFO - 24/09/21 22:15:20 INFO FileSourceStrategy: Pushed Filters: 
+[2024-09-21T22:15:21.000+0000] {ssh.py:524} INFO - 24/09/21 22:15:20 INFO FileSourceStrategy: Post-Scan Filters: (length(trim(value#0, None)) > 0)
+[2024-09-21T22:15:21.003+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO FileSourceStrategy: Output Data Schema: struct<value: string>
+[2024-09-21T22:15:21.482+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO CodeGenerator: Code generated in 120.387952 ms
+[2024-09-21T22:15:21.535+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 215.3 KiB, free 9.4 GiB)
+[2024-09-21T22:15:21.593+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 36.0 KiB, free 9.4 GiB)
+[2024-09-21T22:15:21.598+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on spark-master:39387 (size: 36.0 KiB, free: 9.4 GiB)
+[2024-09-21T22:15:21.601+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO SparkContext: Created broadcast 0 from csv at NativeMethodAccessorImpl.java:0
+[2024-09-21T22:15:21.613+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2024-09-21T22:15:21.745+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO SparkContext: Starting job: csv at NativeMethodAccessorImpl.java:0
+[2024-09-21T22:15:21.758+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO DAGScheduler: Got job 0 (csv at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2024-09-21T22:15:21.759+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO DAGScheduler: Final stage: ResultStage 0 (csv at NativeMethodAccessorImpl.java:0)
+[2024-09-21T22:15:21.760+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO DAGScheduler: Parents of final stage: List()
+[2024-09-21T22:15:21.761+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO DAGScheduler: Missing parents: List()
+[2024-09-21T22:15:21.763+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[3] at csv at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2024-09-21T22:15:21.825+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 11.8 KiB, free 9.4 GiB)
+[2024-09-21T22:15:21.829+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 5.9 KiB, free 9.4 GiB)
+[2024-09-21T22:15:21.830+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on spark-master:39387 (size: 5.9 KiB, free: 9.4 GiB)
+[2024-09-21T22:15:21.831+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1513
+[2024-09-21T22:15:21.864+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[3] at csv at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2024-09-21T22:15:21.865+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+[2024-09-21T22:15:21.915+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (spark-master, executor driver, partition 0, PROCESS_LOCAL, 4903 bytes) taskResourceAssignments Map()
+[2024-09-21T22:15:21.940+0000] {ssh.py:524} INFO - 24/09/21 22:15:21 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+[2024-09-21T22:15:22.121+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO FileScanRDD: Reading File path: s3a://raw/GTFS/paradas/stops.txt, range: 0-2221690, partition values: [empty row]
+[2024-09-21T22:15:22.141+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO CodeGenerator: Code generated in 13.209621 ms
+[2024-09-21T22:15:22.207+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1562 bytes result sent to driver
+[2024-09-21T22:15:22.214+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 309 ms on spark-master (executor driver) (1/1)
+[2024-09-21T22:15:22.216+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+[2024-09-21T22:15:22.220+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO DAGScheduler: ResultStage 0 (csv at NativeMethodAccessorImpl.java:0) finished in 0.446 s
+[2024-09-21T22:15:22.222+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2024-09-21T22:15:22.223+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+[2024-09-21T22:15:22.225+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO DAGScheduler: Job 0 finished: csv at NativeMethodAccessorImpl.java:0, took 0.479321 s
+[2024-09-21T22:15:22.245+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO CodeGenerator: Code generated in 10.563845 ms
+[2024-09-21T22:15:22.306+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO FileSourceStrategy: Pushed Filters: 
+[2024-09-21T22:15:22.306+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO FileSourceStrategy: Post-Scan Filters: 
+[2024-09-21T22:15:22.307+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO FileSourceStrategy: Output Data Schema: struct<value: string>
+[2024-09-21T22:15:22.313+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 215.3 KiB, free 9.4 GiB)
+[2024-09-21T22:15:22.325+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 36.0 KiB, free 9.4 GiB)
+[2024-09-21T22:15:22.331+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on spark-master:39387 (size: 36.0 KiB, free: 9.4 GiB)
+[2024-09-21T22:15:22.334+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO SparkContext: Created broadcast 2 from csv at NativeMethodAccessorImpl.java:0
+[2024-09-21T22:15:22.335+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2024-09-21T22:15:22.557+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO FileSourceStrategy: Pushed Filters: IsNotNull(stop_desc)
+[2024-09-21T22:15:22.560+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO FileSourceStrategy: Post-Scan Filters: isnotnull(stop_desc#19)
+[2024-09-21T22:15:22.561+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO FileSourceStrategy: Output Data Schema: struct<stop_id: string, stop_desc: string>
+[2024-09-21T22:15:22.592+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO CodeGenerator: Code generated in 12.871672 ms
+[2024-09-21T22:15:22.599+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 215.2 KiB, free 9.4 GiB)
+[2024-09-21T22:15:22.611+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 35.9 KiB, free 9.4 GiB)
+[2024-09-21T22:15:22.614+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on spark-master:39387 (size: 35.9 KiB, free: 9.4 GiB)
+[2024-09-21T22:15:22.616+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO SparkContext: Created broadcast 3 from javaToPython at NativeMethodAccessorImpl.java:0
+[2024-09-21T22:15:22.621+0000] {ssh.py:524} INFO - 24/09/21 22:15:22 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2024-09-21T22:15:23.092+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO ParquetFileFormat: Using default output committer for Parquet: org.apache.parquet.hadoop.ParquetOutputCommitter
+[2024-09-21T22:15:23.114+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-09-21T22:15:23.114+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-09-21T22:15:23.115+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2024-09-21T22:15:23.116+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-09-21T22:15:23.116+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-09-21T22:15:23.122+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2024-09-21T22:15:23.377+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO CodeGenerator: Code generated in 22.59791 ms
+[2024-09-21T22:15:23.483+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO SparkContext: Starting job: save at NativeMethodAccessorImpl.java:0
+[2024-09-21T22:15:23.505+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO DAGScheduler: Got job 1 (save at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2024-09-21T22:15:23.508+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO DAGScheduler: Final stage: ResultStage 1 (save at NativeMethodAccessorImpl.java:0)
+[2024-09-21T22:15:23.509+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO DAGScheduler: Parents of final stage: List()
+[2024-09-21T22:15:23.510+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO DAGScheduler: Missing parents: List()
+[2024-09-21T22:15:23.513+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[20] at save at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2024-09-21T22:15:23.640+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 238.2 KiB, free 9.4 GiB)
+[2024-09-21T22:15:23.645+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 89.2 KiB, free 9.4 GiB)
+[2024-09-21T22:15:23.649+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on spark-master:39387 (size: 89.2 KiB, free: 9.4 GiB)
+[2024-09-21T22:15:23.656+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1513
+[2024-09-21T22:15:23.659+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[20] at save at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2024-09-21T22:15:23.661+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+[2024-09-21T22:15:23.667+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (spark-master, executor driver, partition 0, PROCESS_LOCAL, 4903 bytes) taskResourceAssignments Map()
+[2024-09-21T22:15:23.671+0000] {ssh.py:524} INFO - 24/09/21 22:15:23 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+[2024-09-21T22:15:24.371+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO FileScanRDD: Reading File path: s3a://raw/GTFS/paradas/stops.txt, range: 0-2221690, partition values: [empty row]
+[2024-09-21T22:15:24.374+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-09-21T22:15:24.374+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-09-21T22:15:24.375+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2024-09-21T22:15:24.376+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-09-21T22:15:24.376+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-09-21T22:15:24.377+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+[2024-09-21T22:15:24.382+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO CodecConfig: Compression: SNAPPY
+[2024-09-21T22:15:24.384+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO CodecConfig: Compression: SNAPPY
+[2024-09-21T22:15:24.390+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO CodeGenerator: Code generated in 14.185287 ms
+[2024-09-21T22:15:24.406+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO ParquetOutputFormat: Parquet block size to 134217728
+[2024-09-21T22:15:24.411+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO ParquetOutputFormat: Validation is off
+[2024-09-21T22:15:24.412+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO ParquetOutputFormat: Maximum row group padding size is 8388608 bytes
+[2024-09-21T22:15:24.413+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO ParquetOutputFormat: Parquet properties are:
+[2024-09-21T22:15:24.413+0000] {ssh.py:524} INFO - Parquet page size to 1048576
+[2024-09-21T22:15:24.414+0000] {ssh.py:524} INFO - Parquet dictionary page size to 1048576
+[2024-09-21T22:15:24.414+0000] {ssh.py:524} INFO - Dictionary is true
+[2024-09-21T22:15:24.415+0000] {ssh.py:524} INFO - Writer version is: PARQUET_1_0
+[2024-09-21T22:15:24.415+0000] {ssh.py:524} INFO - Page size checking is: estimated
+[2024-09-21T22:15:24.415+0000] {ssh.py:524} INFO - Min row count for page size check is: 100
+[2024-09-21T22:15:24.416+0000] {ssh.py:524} INFO - Max row count for page size check is: 10000
+[2024-09-21T22:15:24.416+0000] {ssh.py:524} INFO - Truncate length for column indexes is: 64
+[2024-09-21T22:15:24.416+0000] {ssh.py:524} INFO - Truncate length for statistics min/max  is: 2147483647
+[2024-09-21T22:15:24.417+0000] {ssh.py:524} INFO - Bloom filter enabled: false
+[2024-09-21T22:15:24.417+0000] {ssh.py:524} INFO - Max Bloom filter size for a column is 1048576
+[2024-09-21T22:15:24.417+0000] {ssh.py:524} INFO - Bloom filter expected number of distinct values are: null
+[2024-09-21T22:15:24.418+0000] {ssh.py:524} INFO - Page row count limit to 20000
+[2024-09-21T22:15:24.418+0000] {ssh.py:524} INFO - Writing page checksums is: on
+[2024-09-21T22:15:24.431+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO CodeGenerator: Code generated in 7.352529 ms
+[2024-09-21T22:15:24.443+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+[2024-09-21T22:15:24.444+0000] {ssh.py:524} INFO - {
+[2024-09-21T22:15:24.444+0000] {ssh.py:524} INFO -   "type" : "struct",
+[2024-09-21T22:15:24.445+0000] {ssh.py:524} INFO -   "fields" : [ {
+[2024-09-21T22:15:24.445+0000] {ssh.py:524} INFO -     "name" : "data",
+[2024-09-21T22:15:24.446+0000] {ssh.py:524} INFO -     "type" : "string",
+[2024-09-21T22:15:24.446+0000] {ssh.py:524} INFO -     "nullable" : true,
+[2024-09-21T22:15:24.446+0000] {ssh.py:524} INFO -     "metadata" : { }
+[2024-09-21T22:15:24.447+0000] {ssh.py:524} INFO -   } ]
+[2024-09-21T22:15:24.447+0000] {ssh.py:524} INFO - }
+[2024-09-21T22:15:24.448+0000] {ssh.py:524} INFO - and corresponding Parquet message type:
+[2024-09-21T22:15:24.448+0000] {ssh.py:524} INFO - message spark_schema {
+[2024-09-21T22:15:24.448+0000] {ssh.py:524} INFO -   optional binary data (STRING);
+[2024-09-21T22:15:24.449+0000] {ssh.py:524} INFO - }
+[2024-09-21T22:15:24.449+0000] {ssh.py:524} INFO - 
+[2024-09-21T22:15:24.449+0000] {ssh.py:524} INFO -        
+[2024-09-21T22:15:24.503+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO CodecPool: Got brand-new compressor [.snappy]
+[2024-09-21T22:15:24.591+0000] {ssh.py:524} INFO - 24/09/21 22:15:24 INFO BlockManagerInfo: Removed broadcast_1_piece0 on spark-master:39387 in memory (size: 5.9 KiB, free: 9.4 GiB)
+[2024-09-21T22:25:24.702+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 178, in execute
+    result = self.run_ssh_client_command(ssh_client, self.command, context=context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 163, in run_ssh_client_command
+    exit_status, agg_stdout, agg_stderr = self.hook.exec_ssh_client_command(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/hooks/ssh.py", line 549, in exec_ssh_client_command
+    raise AirflowException("SSH command timed out")
+airflow.exceptions.AirflowException: SSH command timed out
+[2024-09-21T22:25:24.705+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=raw_ingestion, task_id=spark_raw_ingestion_previsao, execution_date=20240921T221511, start_date=20240921T221512, end_date=20240921T222524
+[2024-09-21T22:25:24.723+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 420 for task spark_raw_ingestion_previsao (SSH command timed out; 1936)
+[2024-09-21T22:25:24.756+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-21T22:25:24.796+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
