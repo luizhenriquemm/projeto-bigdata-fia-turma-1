@@ -1,0 +1,112 @@
+[2024-09-23T01:48:06.625+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: raw_ingestion_15min.spark_raw_ingestion_posicao scheduled__2024-09-23T01:30:00+00:00 [queued]>
+[2024-09-23T01:48:06.634+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: raw_ingestion_15min.spark_raw_ingestion_posicao scheduled__2024-09-23T01:30:00+00:00 [queued]>
+[2024-09-23T01:48:06.635+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 0
+[2024-09-23T01:48:06.647+0000] {taskinstance.py:1382} INFO - Executing <Task(SSHOperator): spark_raw_ingestion_posicao> on 2024-09-23 01:30:00+00:00
+[2024-09-23T01:48:06.652+0000] {standard_task_runner.py:57} INFO - Started process 4050 to run task
+[2024-09-23T01:48:06.654+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'raw_ingestion_15min', 'spark_raw_ingestion_posicao', 'scheduled__2024-09-23T01:30:00+00:00', '--job-id', '456', '--raw', '--subdir', 'DAGS_FOLDER/raw_ingestion_15min.py', '--cfg-path', '/tmp/tmptdn8a03x']
+[2024-09-23T01:48:06.655+0000] {standard_task_runner.py:85} INFO - Job 456: Subtask spark_raw_ingestion_posicao
+[2024-09-23T01:48:06.765+0000] {task_command.py:416} INFO - Running <TaskInstance: raw_ingestion_15min.spark_raw_ingestion_posicao scheduled__2024-09-23T01:30:00+00:00 [running]> on host airflow-worker
+[2024-09-23T01:48:06.950+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='raw_ingestion_15min' AIRFLOW_CTX_TASK_ID='spark_raw_ingestion_posicao' AIRFLOW_CTX_EXECUTION_DATE='2024-09-23T01:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-23T01:30:00+00:00'
+[2024-09-23T01:48:06.951+0000] {ssh.py:141} INFO - Creating ssh_client
+[2024-09-23T01:48:06.951+0000] {ssh.py:114} INFO - ssh_hook is not provided or invalid. Trying ssh_conn_id to create SSHHook.
+[2024-09-23T01:48:06.984+0000] {base.py:73} INFO - Using connection ID 'spark_ssh_default' for task execution.
+[2024-09-23T01:48:06.984+0000] {ssh.py:300} WARNING - No Host Key Verification. This won't protect against Man-In-The-Middle attacks
+[2024-09-23T01:48:06.992+0000] {transport.py:1893} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2024-09-23T01:48:07.088+0000] {transport.py:1893} INFO - Authentication (password) successful!
+[2024-09-23T01:48:07.089+0000] {ssh.py:478} INFO - Running command: export SPARK_HOME=/usr/local/spark; /opt/conda/bin/spark-submit --master local[*] ---driver-cores 2 --executor-cores 2 --driver-memory 4G --executor-memory 4G /opt/shared/scripts/raw_ingestion.py 2024-09-23 posicao
+[2024-09-23T01:48:07.394+0000] {ssh.py:529} WARNING - Error: Unrecognized option: ---driver-cores
+[2024-09-23T01:48:08.398+0000] {ssh.py:529} WARNING - Usage: spark-submit [options] <app jar | python file | R file> [app arguments]
+[2024-09-23T01:48:08.398+0000] {ssh.py:529} WARNING - Usage: spark-submit --kill [submission ID] --master [spark://...]
+[2024-09-23T01:48:08.399+0000] {ssh.py:529} WARNING - Usage: spark-submit --status [submission ID] --master [spark://...]
+[2024-09-23T01:48:08.399+0000] {ssh.py:529} WARNING - Usage: spark-submit run-example [options] example-class [example args]
+[2024-09-23T01:48:08.400+0000] {ssh.py:529} WARNING - Options:
+[2024-09-23T01:48:08.401+0000] {ssh.py:529} WARNING -   --master MASTER_URL         spark://host:port, mesos://host:port, yarn,
+[2024-09-23T01:48:08.401+0000] {ssh.py:529} WARNING -                               k8s://https://host:port, or local (Default: local[*]).
+[2024-09-23T01:48:08.401+0000] {ssh.py:529} WARNING -   --deploy-mode DEPLOY_MODE   Whether to launch the driver program locally ("client") or
+[2024-09-23T01:48:08.402+0000] {ssh.py:529} WARNING -                               on one of the worker machines inside the cluster ("cluster")
+[2024-09-23T01:48:08.402+0000] {ssh.py:529} WARNING -                               (Default: client).
+[2024-09-23T01:48:08.402+0000] {ssh.py:529} WARNING -   --class CLASS_NAME          Your application's main class (for Java / Scala apps).
+[2024-09-23T01:48:08.403+0000] {ssh.py:529} WARNING -   --name NAME                 A name of your application.
+[2024-09-23T01:48:08.403+0000] {ssh.py:529} WARNING -   --jars JARS                 Comma-separated list of jars to include on the driver
+[2024-09-23T01:48:08.404+0000] {ssh.py:529} WARNING -                               and executor classpaths.
+[2024-09-23T01:48:08.404+0000] {ssh.py:529} WARNING -   --packages                  Comma-separated list of maven coordinates of jars to include
+[2024-09-23T01:48:08.404+0000] {ssh.py:529} WARNING -                               on the driver and executor classpaths. Will search the local
+[2024-09-23T01:48:08.405+0000] {ssh.py:529} WARNING -                               maven repo, then maven central and any additional remote
+[2024-09-23T01:48:08.405+0000] {ssh.py:529} WARNING -                               repositories given by --repositories. The format for the
+[2024-09-23T01:48:08.405+0000] {ssh.py:529} WARNING -                               coordinates should be groupId:artifactId:version.
+[2024-09-23T01:48:08.405+0000] {ssh.py:529} WARNING -   --exclude-packages          Comma-separated list of groupId:artifactId, to exclude while
+[2024-09-23T01:48:08.406+0000] {ssh.py:529} WARNING -                               resolving the dependencies provided in --packages to avoid
+[2024-09-23T01:48:08.406+0000] {ssh.py:529} WARNING -                               dependency conflicts.
+[2024-09-23T01:48:08.406+0000] {ssh.py:529} WARNING -   --repositories              Comma-separated list of additional remote repositories to
+[2024-09-23T01:48:08.407+0000] {ssh.py:529} WARNING -                               search for the maven coordinates given with --packages.
+[2024-09-23T01:48:08.407+0000] {ssh.py:529} WARNING -   --py-files PY_FILES         Comma-separated list of .zip, .egg, or .py files to place
+[2024-09-23T01:48:08.408+0000] {ssh.py:529} WARNING -                               on the PYTHONPATH for Python apps.
+[2024-09-23T01:48:08.408+0000] {ssh.py:529} WARNING -   --files FILES               Comma-separated list of files to be placed in the working
+[2024-09-23T01:48:08.408+0000] {ssh.py:529} WARNING -                               directory of each executor. File paths of these files
+[2024-09-23T01:48:08.409+0000] {ssh.py:529} WARNING -                               in executors can be accessed via SparkFiles.get(fileName).
+[2024-09-23T01:48:08.409+0000] {ssh.py:529} WARNING -   --archives ARCHIVES         Comma-separated list of archives to be extracted into the
+[2024-09-23T01:48:08.409+0000] {ssh.py:529} WARNING -                               working directory of each executor.
+[2024-09-23T01:48:08.410+0000] {ssh.py:529} WARNING - 
+[2024-09-23T01:48:08.410+0000] {ssh.py:529} WARNING -   --conf, -c PROP=VALUE       Arbitrary Spark configuration property.
+[2024-09-23T01:48:08.410+0000] {ssh.py:529} WARNING -   --properties-file FILE      Path to a file from which to load extra properties. If not
+[2024-09-23T01:48:08.410+0000] {ssh.py:529} WARNING -                               specified, this will look for conf/spark-defaults.conf.
+[2024-09-23T01:48:08.411+0000] {ssh.py:529} WARNING - 
+[2024-09-23T01:48:08.411+0000] {ssh.py:529} WARNING -   --driver-memory MEM         Memory for driver (e.g. 1000M, 2G) (Default: 1024M).
+[2024-09-23T01:48:08.412+0000] {ssh.py:529} WARNING -   --driver-java-options       Extra Java options to pass to the driver.
+[2024-09-23T01:48:08.412+0000] {ssh.py:529} WARNING -   --driver-library-path       Extra library path entries to pass to the driver.
+[2024-09-23T01:48:08.412+0000] {ssh.py:529} WARNING -   --driver-class-path         Extra class path entries to pass to the driver. Note that
+[2024-09-23T01:48:08.412+0000] {ssh.py:529} WARNING -                               jars added with --jars are automatically included in the
+[2024-09-23T01:48:08.413+0000] {ssh.py:529} WARNING -                               classpath.
+[2024-09-23T01:48:08.413+0000] {ssh.py:529} WARNING - 
+[2024-09-23T01:48:08.413+0000] {ssh.py:529} WARNING -   --executor-memory MEM       Memory per executor (e.g. 1000M, 2G) (Default: 1G).
+[2024-09-23T01:48:08.414+0000] {ssh.py:529} WARNING - 
+[2024-09-23T01:48:08.414+0000] {ssh.py:529} WARNING -   --proxy-user NAME           User to impersonate when submitting the application.
+[2024-09-23T01:48:08.415+0000] {ssh.py:529} WARNING -                               This argument does not work with --principal / --keytab.
+[2024-09-23T01:48:08.415+0000] {ssh.py:529} WARNING - 
+[2024-09-23T01:48:08.415+0000] {ssh.py:529} WARNING -   --help, -h                  Show this help message and exit.
+[2024-09-23T01:48:08.416+0000] {ssh.py:529} WARNING -   --verbose, -v               Print additional debug output.
+[2024-09-23T01:48:08.416+0000] {ssh.py:529} WARNING -   --version,                  Print the version of current Spark.
+[2024-09-23T01:48:08.417+0000] {ssh.py:529} WARNING - 
+[2024-09-23T01:48:08.417+0000] {ssh.py:529} WARNING -  Cluster deploy mode only:
+[2024-09-23T01:48:08.417+0000] {ssh.py:529} WARNING -   --driver-cores NUM          Number of cores used by the driver, only in cluster mode
+[2024-09-23T01:48:08.418+0000] {ssh.py:529} WARNING -                               (Default: 1).
+[2024-09-23T01:48:08.418+0000] {ssh.py:529} WARNING - 
+[2024-09-23T01:48:08.418+0000] {ssh.py:529} WARNING -  Spark standalone or Mesos with cluster deploy mode only:
+[2024-09-23T01:48:08.419+0000] {ssh.py:529} WARNING -   --supervise                 If given, restarts the driver on failure.
+[2024-09-23T01:48:08.419+0000] {ssh.py:529} WARNING - 
+[2024-09-23T01:48:08.419+0000] {ssh.py:529} WARNING -  Spark standalone, Mesos or K8s with cluster deploy mode only:
+[2024-09-23T01:48:08.420+0000] {ssh.py:529} WARNING -   --kill SUBMISSION_ID        If given, kills the driver specified.
+[2024-09-23T01:48:08.420+0000] {ssh.py:529} WARNING -   --status SUBMISSION_ID      If given, requests the status of the driver specified.
+[2024-09-23T01:48:08.420+0000] {ssh.py:529} WARNING - 
+[2024-09-23T01:48:08.421+0000] {ssh.py:529} WARNING -  Spark standalone, Mesos and Kubernetes only:
+[2024-09-23T01:48:08.421+0000] {ssh.py:529} WARNING -   --total-executor-cores NUM  Total cores for all executors.
+[2024-09-23T01:48:08.421+0000] {ssh.py:529} WARNING - 
+[2024-09-23T01:48:08.422+0000] {ssh.py:529} WARNING -  Spark standalone, YARN and Kubernetes only:
+[2024-09-23T01:48:08.422+0000] {ssh.py:529} WARNING -   --executor-cores NUM        Number of cores used by each executor. (Default: 1 in
+[2024-09-23T01:48:08.422+0000] {ssh.py:529} WARNING -                               YARN and K8S modes, or all available cores on the worker
+[2024-09-23T01:48:08.423+0000] {ssh.py:529} WARNING -                               in standalone mode).
+[2024-09-23T01:48:08.423+0000] {ssh.py:529} WARNING - 
+[2024-09-23T01:48:08.423+0000] {ssh.py:529} WARNING -  Spark on YARN and Kubernetes only:
+[2024-09-23T01:48:08.425+0000] {ssh.py:529} WARNING -   --num-executors NUM         Number of executors to launch (Default: 2).
+[2024-09-23T01:48:08.425+0000] {ssh.py:529} WARNING -                               If dynamic allocation is enabled, the initial number of
+[2024-09-23T01:48:08.426+0000] {ssh.py:529} WARNING -                               executors will be at least NUM.
+[2024-09-23T01:48:08.426+0000] {ssh.py:529} WARNING -   --principal PRINCIPAL       Principal to be used to login to KDC.
+[2024-09-23T01:48:08.427+0000] {ssh.py:529} WARNING -   --keytab KEYTAB             The full path to the file that contains the keytab for the
+[2024-09-23T01:48:08.427+0000] {ssh.py:529} WARNING -                               principal specified above.
+[2024-09-23T01:48:08.427+0000] {ssh.py:529} WARNING - 
+[2024-09-23T01:48:08.428+0000] {ssh.py:529} WARNING -  Spark on YARN only:
+[2024-09-23T01:48:08.428+0000] {ssh.py:529} WARNING -   --queue QUEUE_NAME          The YARN queue to submit to (Default: "default").
+[2024-09-23T01:48:08.429+0000] {ssh.py:529} WARNING -       
+[2024-09-23T01:48:08.507+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 178, in execute
+    result = self.run_ssh_client_command(ssh_client, self.command, context=context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 166, in run_ssh_client_command
+    self.raise_for_status(exit_status, agg_stderr, context=context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/ssh/operators/ssh.py", line 160, in raise_for_status
+    raise AirflowException(f"SSH operator error: exit status = {exit_status}")
+airflow.exceptions.AirflowException: SSH operator error: exit status = 1
+[2024-09-23T01:48:08.510+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=raw_ingestion_15min, task_id=spark_raw_ingestion_posicao, execution_date=20240923T013000, start_date=20240923T014806, end_date=20240923T014808
+[2024-09-23T01:48:08.534+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 456 for task spark_raw_ingestion_posicao (SSH operator error: exit status = 1; 4050)
+[2024-09-23T01:48:08.553+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-23T01:48:08.603+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

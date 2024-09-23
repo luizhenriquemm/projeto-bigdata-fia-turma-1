@@ -1,0 +1,36 @@
+[2024-09-23T02:06:43.503+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: raw_ingestion_15min.trigger_stage_processing manual__2024-09-23T02:06:28.369355+00:00 [queued]>
+[2024-09-23T02:06:43.512+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: raw_ingestion_15min.trigger_stage_processing manual__2024-09-23T02:06:28.369355+00:00 [queued]>
+[2024-09-23T02:06:43.513+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2024-09-23T02:06:43.525+0000] {taskinstance.py:1382} INFO - Executing <Task(TriggerDagRunOperator): trigger_stage_processing> on 2024-09-23 02:06:28.369355+00:00
+[2024-09-23T02:06:43.529+0000] {standard_task_runner.py:57} INFO - Started process 4399 to run task
+[2024-09-23T02:06:43.531+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'raw_ingestion_15min', 'trigger_stage_processing', 'manual__2024-09-23T02:06:28.369355+00:00', '--job-id', '475', '--raw', '--subdir', 'DAGS_FOLDER/raw_ingestion_15min.py', '--cfg-path', '/tmp/tmpso0rfzwg']
+[2024-09-23T02:06:43.532+0000] {standard_task_runner.py:85} INFO - Job 475: Subtask trigger_stage_processing
+[2024-09-23T02:06:43.648+0000] {task_command.py:416} INFO - Running <TaskInstance: raw_ingestion_15min.trigger_stage_processing manual__2024-09-23T02:06:28.369355+00:00 [running]> on host airflow-worker
+[2024-09-23T02:06:43.835+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='raw_ingestion_15min' AIRFLOW_CTX_TASK_ID='trigger_stage_processing' AIRFLOW_CTX_EXECUTION_DATE='2024-09-23T02:06:28.369355+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-23T02:06:28.369355+00:00'
+[2024-09-23T02:06:43.919+0000] {trigger_dagrun.py:173} INFO - Clearing stage_processing on 2024-09-23T00:00:00+00:00
+[2024-09-23T02:06:44.010+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/trigger_dagrun.py", line 163, in execute
+    dag_run = trigger_dag(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/api/common/trigger_dag.py", line 122, in trigger_dag
+    triggers = _trigger_dag(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/api/common/trigger_dag.py", line 78, in _trigger_dag
+    raise DagRunAlreadyExists(dag_run=dag_run, execution_date=execution_date, run_id=run_id)
+airflow.exceptions.DagRunAlreadyExists: A DAG Run already exists for DAG stage_processing at 2024-09-23T00:00:00+00:00 with run id manual__2024-09-23T00:00:00+00:00
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/trigger_dagrun.py", line 183, in execute
+    dag.clear(start_date=parsed_execution_date, end_date=parsed_execution_date)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dag.py", line 2250, in clear
+    clear_task_instances(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 260, in clear_task_instances
+    ti.max_tries = ti.try_number + task_retries - 1
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+[2024-09-23T02:06:44.038+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=raw_ingestion_15min, task_id=trigger_stage_processing, execution_date=20240923T020628, start_date=20240923T020643, end_date=20240923T020644
+[2024-09-23T02:06:44.058+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 475 for task trigger_stage_processing (unsupported operand type(s) for +: 'int' and 'NoneType'; 4399)
+[2024-09-23T02:06:44.105+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-23T02:06:44.146+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -6,7 +6,7 @@ from airflow.providers.ssh.operators.ssh import SSHOperator
 default_args = {
     'owner': 'admin',
     'start_date': datetime(2024, 9, 19),
-    'retries': None
+    'retries': 0
 }
 
 with airflow.DAG('stage_processing',
