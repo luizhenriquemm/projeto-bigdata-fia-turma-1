@@ -41,6 +41,7 @@ deltaTable.alias('destiny') \
     .execute()
 
 deltaTable.optimize()
+deltaTable.vacuum(168)
 
 
 # Paradas
@@ -63,6 +64,7 @@ deltaTable.alias('destiny') \
     .execute()
 
 deltaTable.optimize()
+deltaTable.vacuum(168)
 
 
 # Trips
@@ -85,6 +87,7 @@ deltaTable.alias('destiny') \
     .execute()
 
 deltaTable.optimize()
+deltaTable.vacuum(168)
 
 
 # Corredores
@@ -111,6 +114,7 @@ deltaTable.alias('destiny') \
     .execute()
 
 deltaTable.optimize()
+deltaTable.vacuum(168)
 
 
 # Empresas
@@ -140,6 +144,7 @@ deltaTable.alias('destiny') \
     .execute()
 
 deltaTable.optimize()
+deltaTable.vacuum(168)
 
 
 # Posição
@@ -148,7 +153,7 @@ df_posicao = df_posicao.select(
                     col('hr').alias('Hora')
                     ,explode('l').alias('Linha'))
 
-window_spec = Window.partitionBy("Linha.cl").orderBy(col("Hora").desc())
+window_spec = Window.partitionBy("Linha.cl","Linha.sl").orderBy(col("Hora").desc())
 df_posicao_tratado = df_posicao.withColumn("row_num", row_number().over(window_spec)) \
                        .filter(col("row_num") == 1) \
                        .drop("row_num")
@@ -170,7 +175,32 @@ deltaTable.alias('destiny') \
     .execute()
 
 deltaTable.optimize()
+deltaTable.vacuum(168)
 
 
 # Previsao
-# df_previsao = spark.read.json(f"s3a://raw/olhovivo/previsao/dt={dt_now}/")
+df_previsao = spark.read.json(f"s3a://raw/olhovivo/previsao/dt={dt_now}/")
+
+window_spec = Window.partitionBy("stop_id").orderBy(col("hr").desc())
+df_previsao_tratado = df_previsao.withColumn("row_num", row_number().over(window_spec)) \
+                       .filter(col("row_num") == 1) \
+                       .drop("row_num")
+
+DeltaTable.createIfNotExists(spark) \
+    .tableName("stage.previsao")\
+    .addColumns(df_previsao_tratado.schema)\
+    .execute()
+
+deltaTable = DeltaTable.forName(spark, "stage.previsao")
+
+deltaTable.alias('destiny') \
+    .merge(
+        df_previsao_tratado.alias('source'),
+        'source.stop_id = destiny.stop_id'
+    ) \
+    .whenMatchedUpdateAll() \
+    .whenNotMatchedInsertAll() \
+    .execute()
+
+deltaTable.optimize()
+deltaTable.vacuum(168)

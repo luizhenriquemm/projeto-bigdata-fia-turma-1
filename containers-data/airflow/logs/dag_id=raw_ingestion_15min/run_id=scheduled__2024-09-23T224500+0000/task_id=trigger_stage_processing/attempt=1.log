@@ -1,0 +1,19 @@
+[2024-09-23T23:00:15.920+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: raw_ingestion_15min.trigger_stage_processing scheduled__2024-09-23T22:45:00+00:00 [queued]>
+[2024-09-23T23:00:15.935+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: raw_ingestion_15min.trigger_stage_processing scheduled__2024-09-23T22:45:00+00:00 [queued]>
+[2024-09-23T23:00:15.936+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2024-09-23T23:00:15.952+0000] {taskinstance.py:1382} INFO - Executing <Task(TriggerDagRunOperator): trigger_stage_processing> on 2024-09-23 22:45:00+00:00
+[2024-09-23T23:00:15.957+0000] {standard_task_runner.py:57} INFO - Started process 943 to run task
+[2024-09-23T23:00:15.959+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'raw_ingestion_15min', 'trigger_stage_processing', 'scheduled__2024-09-23T22:45:00+00:00', '--job-id', '521', '--raw', '--subdir', 'DAGS_FOLDER/raw_ingestion_15min.py', '--cfg-path', '/tmp/tmpk2dn2_w_']
+[2024-09-23T23:00:15.960+0000] {standard_task_runner.py:85} INFO - Job 521: Subtask trigger_stage_processing
+[2024-09-23T23:00:16.086+0000] {task_command.py:416} INFO - Running <TaskInstance: raw_ingestion_15min.trigger_stage_processing scheduled__2024-09-23T22:45:00+00:00 [running]> on host airflow-worker
+[2024-09-23T23:00:16.265+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='raw_ingestion_15min' AIRFLOW_CTX_TASK_ID='trigger_stage_processing' AIRFLOW_CTX_EXECUTION_DATE='2024-09-23T22:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-23T22:45:00+00:00'
+[2024-09-23T23:00:16.349+0000] {trigger_dagrun.py:173} INFO - Clearing stage_processing on 2024-09-23T00:00:00+00:00
+[2024-09-23T23:00:16.550+0000] {trigger_dagrun.py:209} INFO - Waiting for stage_processing on 2024-09-23 00:00:00+00:00 to become allowed state ['success'] ...
+[2024-09-23T23:00:26.599+0000] {trigger_dagrun.py:209} INFO - Waiting for stage_processing on 2024-09-23 00:00:00+00:00 to become allowed state ['success'] ...
+[2024-09-23T23:00:36.657+0000] {trigger_dagrun.py:209} INFO - Waiting for stage_processing on 2024-09-23 00:00:00+00:00 to become allowed state ['success'] ...
+[2024-09-23T23:00:46.708+0000] {trigger_dagrun.py:209} INFO - Waiting for stage_processing on 2024-09-23 00:00:00+00:00 to become allowed state ['success'] ...
+[2024-09-23T23:00:56.745+0000] {trigger_dagrun.py:209} INFO - Waiting for stage_processing on 2024-09-23 00:00:00+00:00 to become allowed state ['success'] ...
+[2024-09-23T23:01:06.782+0000] {trigger_dagrun.py:222} INFO - stage_processing finished with allowed state success
+[2024-09-23T23:01:06.817+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=raw_ingestion_15min, task_id=trigger_stage_processing, execution_date=20240923T224500, start_date=20240923T230015, end_date=20240923T230106
+[2024-09-23T23:01:06.861+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-09-23T23:01:06.902+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

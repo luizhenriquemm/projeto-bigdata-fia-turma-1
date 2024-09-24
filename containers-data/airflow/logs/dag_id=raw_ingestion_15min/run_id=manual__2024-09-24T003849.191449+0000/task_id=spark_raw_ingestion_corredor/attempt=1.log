@@ -1,0 +1,246 @@
+[2024-09-24T00:38:50.892+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: raw_ingestion_15min.spark_raw_ingestion_corredor manual__2024-09-24T00:38:49.191449+00:00 [queued]>
+[2024-09-24T00:38:50.902+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: raw_ingestion_15min.spark_raw_ingestion_corredor manual__2024-09-24T00:38:49.191449+00:00 [queued]>
+[2024-09-24T00:38:50.903+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2024-09-24T00:38:50.920+0000] {taskinstance.py:1382} INFO - Executing <Task(SSHOperator): spark_raw_ingestion_corredor> on 2024-09-24 00:38:49.191449+00:00
+[2024-09-24T00:38:50.928+0000] {standard_task_runner.py:57} INFO - Started process 2568 to run task
+[2024-09-24T00:38:50.930+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'raw_ingestion_15min', 'spark_raw_ingestion_corredor', 'manual__2024-09-24T00:38:49.191449+00:00', '--job-id', '557', '--raw', '--subdir', 'DAGS_FOLDER/raw_ingestion_15min.py', '--cfg-path', '/tmp/tmptuajo4uu']
+[2024-09-24T00:38:50.931+0000] {standard_task_runner.py:85} INFO - Job 557: Subtask spark_raw_ingestion_corredor
+[2024-09-24T00:38:51.054+0000] {task_command.py:416} INFO - Running <TaskInstance: raw_ingestion_15min.spark_raw_ingestion_corredor manual__2024-09-24T00:38:49.191449+00:00 [running]> on host airflow-worker
+[2024-09-24T00:38:51.245+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='raw_ingestion_15min' AIRFLOW_CTX_TASK_ID='spark_raw_ingestion_corredor' AIRFLOW_CTX_EXECUTION_DATE='2024-09-24T00:38:49.191449+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-24T00:38:49.191449+00:00'
+[2024-09-24T00:38:51.245+0000] {ssh.py:141} INFO - Creating ssh_client
+[2024-09-24T00:38:51.246+0000] {ssh.py:114} INFO - ssh_hook is not provided or invalid. Trying ssh_conn_id to create SSHHook.
+[2024-09-24T00:38:51.272+0000] {base.py:73} INFO - Using connection ID 'spark_ssh_default' for task execution.
+[2024-09-24T00:38:51.273+0000] {ssh.py:300} WARNING - No Host Key Verification. This won't protect against Man-In-The-Middle attacks
+[2024-09-24T00:38:51.281+0000] {transport.py:1893} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2024-09-24T00:38:51.431+0000] {transport.py:1893} INFO - Authentication (password) successful!
+[2024-09-24T00:38:51.432+0000] {ssh.py:478} INFO - Running command: export SPARK_HOME=/usr/local/spark; /opt/conda/bin/spark-submit --master local[*] --driver-cores 2 --executor-cores 2 --driver-memory 4G --executor-memory 4G /opt/shared/scripts/raw_ingestion.py 2024-09-24 corredor
+[2024-09-24T00:38:53.925+0000] {ssh.py:524} INFO - [DEBUG] dt_now: 2024-09-24
+[2024-09-24T00:38:53.926+0000] {ssh.py:524} INFO - [DEBUG] endpoint: corredor
+[2024-09-24T00:38:54.003+0000] {ssh.py:524} INFO - 24/09/24 00:38:53 INFO SparkContext: Running Spark version 3.3.1
+[2024-09-24T00:38:54.029+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-09-24T00:38:54.129+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO ResourceUtils: ==============================================================
+[2024-09-24T00:38:54.130+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-09-24T00:38:54.131+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO ResourceUtils: ==============================================================
+[2024-09-24T00:38:54.132+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO SparkContext: Submitted application: raw_ingestion_corredor
+[2024-09-24T00:38:54.154+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-09-24T00:38:54.162+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO ResourceProfile: Limiting resource is cpu
+[2024-09-24T00:38:54.163+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-09-24T00:38:54.205+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO SecurityManager: Changing view acls to: root
+[2024-09-24T00:38:54.205+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO SecurityManager: Changing modify acls to: root
+[2024-09-24T00:38:54.206+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO SecurityManager: Changing view acls groups to: 
+[2024-09-24T00:38:54.207+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO SecurityManager: Changing modify acls groups to: 
+[2024-09-24T00:38:54.207+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+[2024-09-24T00:38:54.531+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO Utils: Successfully started service 'sparkDriver' on port 46565.
+[2024-09-24T00:38:54.567+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO SparkEnv: Registering MapOutputTracker
+[2024-09-24T00:38:54.604+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO SparkEnv: Registering BlockManagerMaster
+[2024-09-24T00:38:54.625+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-09-24T00:38:54.629+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-09-24T00:38:54.635+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-09-24T00:38:54.657+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-53989c68-c40c-424b-bd5d-3bb36261e5ee
+[2024-09-24T00:38:54.676+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO MemoryStore: MemoryStore started with capacity 2.2 GiB
+[2024-09-24T00:38:54.701+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-09-24T00:38:54.878+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+[2024-09-24T00:38:54.879+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+[2024-09-24T00:38:54.880+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 WARN Utils: Service 'SparkUI' could not bind on port 4042. Attempting port 4043.
+[2024-09-24T00:38:54.881+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 WARN Utils: Service 'SparkUI' could not bind on port 4043. Attempting port 4044.
+[2024-09-24T00:38:54.888+0000] {ssh.py:524} INFO - 24/09/24 00:38:54 INFO Utils: Successfully started service 'SparkUI' on port 4044.
+[2024-09-24T00:38:55.046+0000] {ssh.py:524} INFO - 24/09/24 00:38:55 INFO Executor: Starting executor ID driver on host spark-master
+[2024-09-24T00:38:55.068+0000] {ssh.py:524} INFO - 24/09/24 00:38:55 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2024-09-24T00:38:55.093+0000] {ssh.py:524} INFO - 24/09/24 00:38:55 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40633.
+[2024-09-24T00:38:55.094+0000] {ssh.py:524} INFO - 24/09/24 00:38:55 INFO NettyBlockTransferService: Server created on spark-master:40633
+[2024-09-24T00:38:55.095+0000] {ssh.py:524} INFO - 24/09/24 00:38:55 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-09-24T00:38:55.101+0000] {ssh.py:524} INFO - 24/09/24 00:38:55 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 40633, None)
+[2024-09-24T00:38:55.107+0000] {ssh.py:524} INFO - 24/09/24 00:38:55 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:40633 with 2.2 GiB RAM, BlockManagerId(driver, spark-master, 40633, None)
+[2024-09-24T00:38:55.111+0000] {ssh.py:524} INFO - 24/09/24 00:38:55 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 40633, None)
+[2024-09-24T00:38:55.114+0000] {ssh.py:524} INFO - 24/09/24 00:38:55 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 40633, None)
+[2024-09-24T00:38:56.107+0000] {ssh.py:524} INFO - 24/09/24 00:38:56 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-09-24T00:38:56.118+0000] {ssh.py:524} INFO - 24/09/24 00:38:56 INFO SharedState: Warehouse path is 'file:/root/spark-warehouse'.
+[2024-09-24T00:38:58.204+0000] {ssh.py:524} INFO - 24/09/24 00:38:58 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[2024-09-24T00:38:58.218+0000] {ssh.py:524} INFO - 24/09/24 00:38:58 INFO MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+[2024-09-24T00:38:58.219+0000] {ssh.py:524} INFO - 24/09/24 00:38:58 INFO MetricsSystemImpl: s3a-file-system metrics system started
+[2024-09-24T00:38:59.388+0000] {ssh.py:524} INFO - 24/09/24 00:38:59 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
+[2024-09-24T00:38:59.391+0000] {ssh.py:524} INFO - 24/09/24 00:38:59 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-09-24T00:38:59.391+0000] {ssh.py:524} INFO - 24/09/24 00:38:59 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-09-24T00:38:59.394+0000] {ssh.py:524} INFO - 24/09/24 00:38:59 INFO AbstractS3ACommitterFactory: Using Committer FileOutputCommitter{PathOutputCommitter{context=TaskAttemptContextImpl{JobContextImpl{jobId=job_202409240038591838426826726336663_0000}; taskId=attempt_202409240038591838426826726336663_0000_m_000000_0, status=''}; org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter@31b5e06c}; outputPath=s3a://raw/olhovivo/corredor/dt=2024-09-24, workPath=s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/_temporary/attempt_202409240038591838426826726336663_0000_m_000000_0, algorithmVersion=1, skipCleanup=false, ignoreCleanupFailures=false} for s3a://raw/olhovivo/corredor/dt=2024-09-24
+[2024-09-24T00:38:59.394+0000] {ssh.py:524} INFO - 24/09/24 00:38:59 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2024-09-24T00:38:59.910+0000] {ssh.py:524} INFO - 24/09/24 00:38:59 INFO CodeGenerator: Code generated in 119.074382 ms
+[2024-09-24T00:39:00.006+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO SparkContext: Starting job: save at NativeMethodAccessorImpl.java:0
+[2024-09-24T00:39:00.018+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO DAGScheduler: Got job 0 (save at NativeMethodAccessorImpl.java:0) with 12 output partitions
+[2024-09-24T00:39:00.019+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO DAGScheduler: Final stage: ResultStage 0 (save at NativeMethodAccessorImpl.java:0)
+[2024-09-24T00:39:00.020+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO DAGScheduler: Parents of final stage: List()
+[2024-09-24T00:39:00.020+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO DAGScheduler: Missing parents: List()
+[2024-09-24T00:39:00.022+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[5] at save at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2024-09-24T00:39:00.107+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 219.9 KiB, free 2.2 GiB)
+[2024-09-24T00:39:00.128+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 80.5 KiB, free 2.2 GiB)
+[2024-09-24T00:39:00.132+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on spark-master:40633 (size: 80.5 KiB, free: 2.2 GiB)
+[2024-09-24T00:39:00.137+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1513
+[2024-09-24T00:39:00.150+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO DAGScheduler: Submitting 12 missing tasks from ResultStage 0 (MapPartitionsRDD[5] at save at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
+[2024-09-24T00:39:00.151+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO TaskSchedulerImpl: Adding task set 0.0 with 12 tasks resource profile 0
+[2024-09-24T00:39:00.204+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (spark-master, executor driver, partition 0, PROCESS_LOCAL, 4433 bytes) taskResourceAssignments Map()
+[2024-09-24T00:39:00.209+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (spark-master, executor driver, partition 1, PROCESS_LOCAL, 4476 bytes) taskResourceAssignments Map()
+[2024-09-24T00:39:00.211+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2) (spark-master, executor driver, partition 2, PROCESS_LOCAL, 4433 bytes) taskResourceAssignments Map()
+[2024-09-24T00:39:00.211+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3) (spark-master, executor driver, partition 3, PROCESS_LOCAL, 4484 bytes) taskResourceAssignments Map()
+[2024-09-24T00:39:00.212+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4) (spark-master, executor driver, partition 4, PROCESS_LOCAL, 4433 bytes) taskResourceAssignments Map()
+[2024-09-24T00:39:00.212+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5) (spark-master, executor driver, partition 5, PROCESS_LOCAL, 4480 bytes) taskResourceAssignments Map()
+[2024-09-24T00:39:00.213+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO TaskSetManager: Starting task 6.0 in stage 0.0 (TID 6) (spark-master, executor driver, partition 6, PROCESS_LOCAL, 4476 bytes) taskResourceAssignments Map()
+[2024-09-24T00:39:00.213+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO TaskSetManager: Starting task 7.0 in stage 0.0 (TID 7) (spark-master, executor driver, partition 7, PROCESS_LOCAL, 4433 bytes) taskResourceAssignments Map()
+[2024-09-24T00:39:00.214+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO TaskSetManager: Starting task 8.0 in stage 0.0 (TID 8) (spark-master, executor driver, partition 8, PROCESS_LOCAL, 4473 bytes) taskResourceAssignments Map()
+[2024-09-24T00:39:00.215+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO TaskSetManager: Starting task 9.0 in stage 0.0 (TID 9) (spark-master, executor driver, partition 9, PROCESS_LOCAL, 4433 bytes) taskResourceAssignments Map()
+[2024-09-24T00:39:00.216+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO TaskSetManager: Starting task 10.0 in stage 0.0 (TID 10) (spark-master, executor driver, partition 10, PROCESS_LOCAL, 4476 bytes) taskResourceAssignments Map()
+[2024-09-24T00:39:00.217+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO TaskSetManager: Starting task 11.0 in stage 0.0 (TID 11) (spark-master, executor driver, partition 11, PROCESS_LOCAL, 4479 bytes) taskResourceAssignments Map()
+[2024-09-24T00:39:00.229+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+[2024-09-24T00:39:00.230+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+[2024-09-24T00:39:00.230+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO Executor: Running task 5.0 in stage 0.0 (TID 5)
+[2024-09-24T00:39:00.231+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO Executor: Running task 3.0 in stage 0.0 (TID 3)
+[2024-09-24T00:39:00.231+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO Executor: Running task 4.0 in stage 0.0 (TID 4)
+[2024-09-24T00:39:00.232+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+[2024-09-24T00:39:00.232+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO Executor: Running task 6.0 in stage 0.0 (TID 6)
+[2024-09-24T00:39:00.233+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO Executor: Running task 7.0 in stage 0.0 (TID 7)
+[2024-09-24T00:39:00.235+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO Executor: Running task 8.0 in stage 0.0 (TID 8)
+[2024-09-24T00:39:00.235+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO Executor: Running task 9.0 in stage 0.0 (TID 9)
+[2024-09-24T00:39:00.257+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO Executor: Running task 10.0 in stage 0.0 (TID 10)
+[2024-09-24T00:39:00.264+0000] {ssh.py:524} INFO - 24/09/24 00:39:00 INFO Executor: Running task 11.0 in stage 0.0 (TID 11)
+[2024-09-24T00:39:01.076+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
+[2024-09-24T00:39:01.077+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-09-24T00:39:01.077+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-09-24T00:39:01.077+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO AbstractS3ACommitterFactory: Using Committer FileOutputCommitter{PathOutputCommitter{context=TaskAttemptContextImpl{JobContextImpl{jobId=job_202409240038596355179350353807907_0000}; taskId=attempt_202409240038596355179350353807907_0000_m_000007_7, status=''}; org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter@562185}; outputPath=s3a://raw/olhovivo/corredor/dt=2024-09-24, workPath=s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/_temporary/attempt_202409240038596355179350353807907_0000_m_000007_7, algorithmVersion=1, skipCleanup=false, ignoreCleanupFailures=false} for s3a://raw/olhovivo/corredor/dt=2024-09-24
+[2024-09-24T00:39:01.078+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2024-09-24T00:39:01.082+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
+[2024-09-24T00:39:01.083+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-09-24T00:39:01.083+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-09-24T00:39:01.085+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO AbstractS3ACommitterFactory: Using Committer FileOutputCommitter{PathOutputCommitter{context=TaskAttemptContextImpl{JobContextImpl{jobId=job_202409240038598059568877946539896_0000}; taskId=attempt_202409240038598059568877946539896_0000_m_000002_2, status=''}; org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter@17373168}; outputPath=s3a://raw/olhovivo/corredor/dt=2024-09-24, workPath=s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/_temporary/attempt_202409240038598059568877946539896_0000_m_000002_2, algorithmVersion=1, skipCleanup=false, ignoreCleanupFailures=false} for s3a://raw/olhovivo/corredor/dt=2024-09-24
+[2024-09-24T00:39:01.085+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2024-09-24T00:39:01.110+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
+[2024-09-24T00:39:01.111+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-09-24T00:39:01.111+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-09-24T00:39:01.112+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
+[2024-09-24T00:39:01.112+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-09-24T00:39:01.113+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-09-24T00:39:01.113+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO AbstractS3ACommitterFactory: Using Committer FileOutputCommitter{PathOutputCommitter{context=TaskAttemptContextImpl{JobContextImpl{jobId=job_202409240038591973614574659490957_0000}; taskId=attempt_202409240038591973614574659490957_0000_m_000001_1, status=''}; org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter@12e7b3ff}; outputPath=s3a://raw/olhovivo/corredor/dt=2024-09-24, workPath=s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/_temporary/attempt_202409240038591973614574659490957_0000_m_000001_1, algorithmVersion=1, skipCleanup=false, ignoreCleanupFailures=false} for s3a://raw/olhovivo/corredor/dt=2024-09-24
+[2024-09-24T00:39:01.114+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2024-09-24T00:39:01.115+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
+[2024-09-24T00:39:01.115+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO AbstractS3ACommitterFactory: Using Committer FileOutputCommitter{PathOutputCommitter{context=TaskAttemptContextImpl{JobContextImpl{jobId=job_202409240038597661833957000060209_0000}; taskId=attempt_202409240038597661833957000060209_0000_m_000005_5, status=''}; org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter@1850ebcf}; outputPath=s3a://raw/olhovivo/corredor/dt=2024-09-24, workPath=s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/_temporary/attempt_202409240038597661833957000060209_0000_m_000005_5, algorithmVersion=1, skipCleanup=false, ignoreCleanupFailures=false} for s3a://raw/olhovivo/corredor/dt=2024-09-24
+[2024-09-24T00:39:01.116+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2024-09-24T00:39:01.119+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-09-24T00:39:01.119+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-09-24T00:39:01.123+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO AbstractS3ACommitterFactory: Using Committer FileOutputCommitter{PathOutputCommitter{context=TaskAttemptContextImpl{JobContextImpl{jobId=job_202409240038593455647239531856178_0000}; taskId=attempt_202409240038593455647239531856178_0000_m_000003_3, status=''}; org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter@255ee761}; outputPath=s3a://raw/olhovivo/corredor/dt=2024-09-24, workPath=s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/_temporary/attempt_202409240038593455647239531856178_0000_m_000003_3, algorithmVersion=1, skipCleanup=false, ignoreCleanupFailures=false} for s3a://raw/olhovivo/corredor/dt=2024-09-24
+[2024-09-24T00:39:01.125+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2024-09-24T00:39:01.152+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO PythonRunner: Times: total = 685, boot = 570, init = 115, finish = 0
+[2024-09-24T00:39:01.161+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO PythonRunner: Times: total = 682, boot = 566, init = 116, finish = 0
+[2024-09-24T00:39:01.175+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
+[2024-09-24T00:39:01.176+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-09-24T00:39:01.177+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-09-24T00:39:01.178+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
+[2024-09-24T00:39:01.179+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-09-24T00:39:01.180+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-09-24T00:39:01.180+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO AbstractS3ACommitterFactory: Using Committer FileOutputCommitter{PathOutputCommitter{context=TaskAttemptContextImpl{JobContextImpl{jobId=job_202409240038593045322987615554887_0000}; taskId=attempt_202409240038593045322987615554887_0000_m_000004_4, status=''}; org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter@1046af49}; outputPath=s3a://raw/olhovivo/corredor/dt=2024-09-24, workPath=s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/_temporary/attempt_202409240038593045322987615554887_0000_m_000004_4, algorithmVersion=1, skipCleanup=false, ignoreCleanupFailures=false} for s3a://raw/olhovivo/corredor/dt=2024-09-24
+[2024-09-24T00:39:01.181+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2024-09-24T00:39:01.182+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO AbstractS3ACommitterFactory: Using Committer FileOutputCommitter{PathOutputCommitter{context=TaskAttemptContextImpl{JobContextImpl{jobId=job_202409240038592546657652397597435_0000}; taskId=attempt_202409240038592546657652397597435_0000_m_000006_6, status=''}; org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter@3ef0687f}; outputPath=s3a://raw/olhovivo/corredor/dt=2024-09-24, workPath=s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/_temporary/attempt_202409240038592546657652397597435_0000_m_000006_6, algorithmVersion=1, skipCleanup=false, ignoreCleanupFailures=false} for s3a://raw/olhovivo/corredor/dt=2024-09-24
+[2024-09-24T00:39:01.182+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2024-09-24T00:39:01.183+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
+[2024-09-24T00:39:01.184+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-09-24T00:39:01.184+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-09-24T00:39:01.185+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO AbstractS3ACommitterFactory: Using Committer FileOutputCommitter{PathOutputCommitter{context=TaskAttemptContextImpl{JobContextImpl{jobId=job_202409240038595385183842761813180_0000}; taskId=attempt_202409240038595385183842761813180_0000_m_000010_10, status=''}; org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter@7c2f22f4}; outputPath=s3a://raw/olhovivo/corredor/dt=2024-09-24, workPath=s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/_temporary/attempt_202409240038595385183842761813180_0000_m_000010_10, algorithmVersion=1, skipCleanup=false, ignoreCleanupFailures=false} for s3a://raw/olhovivo/corredor/dt=2024-09-24
+[2024-09-24T00:39:01.185+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2024-09-24T00:39:01.185+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
+[2024-09-24T00:39:01.186+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-09-24T00:39:01.186+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-09-24T00:39:01.186+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO AbstractS3ACommitterFactory: Using Committer FileOutputCommitter{PathOutputCommitter{context=TaskAttemptContextImpl{JobContextImpl{jobId=job_202409240038597593960790258102198_0000}; taskId=attempt_202409240038597593960790258102198_0000_m_000008_8, status=''}; org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter@511d43f}; outputPath=s3a://raw/olhovivo/corredor/dt=2024-09-24, workPath=s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/_temporary/attempt_202409240038597593960790258102198_0000_m_000008_8, algorithmVersion=1, skipCleanup=false, ignoreCleanupFailures=false} for s3a://raw/olhovivo/corredor/dt=2024-09-24
+[2024-09-24T00:39:01.187+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2024-09-24T00:39:01.203+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
+[2024-09-24T00:39:01.204+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-09-24T00:39:01.204+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-09-24T00:39:01.205+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO AbstractS3ACommitterFactory: Using Committer FileOutputCommitter{PathOutputCommitter{context=TaskAttemptContextImpl{JobContextImpl{jobId=job_202409240038597570690820501019113_0000}; taskId=attempt_202409240038597570690820501019113_0000_m_000011_11, status=''}; org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter@6f768860}; outputPath=s3a://raw/olhovivo/corredor/dt=2024-09-24, workPath=s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/_temporary/attempt_202409240038597570690820501019113_0000_m_000011_11, algorithmVersion=1, skipCleanup=false, ignoreCleanupFailures=false} for s3a://raw/olhovivo/corredor/dt=2024-09-24
+[2024-09-24T00:39:01.206+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2024-09-24T00:39:01.213+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
+[2024-09-24T00:39:01.216+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-09-24T00:39:01.216+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-09-24T00:39:01.219+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO AbstractS3ACommitterFactory: Using Committer FileOutputCommitter{PathOutputCommitter{context=TaskAttemptContextImpl{JobContextImpl{jobId=job_202409240038597854560658717871951_0000}; taskId=attempt_202409240038597854560658717871951_0000_m_000009_9, status=''}; org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter@4eced5b8}; outputPath=s3a://raw/olhovivo/corredor/dt=2024-09-24, workPath=s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/_temporary/attempt_202409240038597854560658717871951_0000_m_000009_9, algorithmVersion=1, skipCleanup=false, ignoreCleanupFailures=false} for s3a://raw/olhovivo/corredor/dt=2024-09-24
+[2024-09-24T00:39:01.228+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2024-09-24T00:39:01.232+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_202409240038596355179350353807907_0000_m_000007_7
+[2024-09-24T00:39:01.238+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
+[2024-09-24T00:39:01.239+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-09-24T00:39:01.240+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-09-24T00:39:01.241+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO AbstractS3ACommitterFactory: Using Committer FileOutputCommitter{PathOutputCommitter{context=TaskAttemptContextImpl{JobContextImpl{jobId=job_202409240038591977716641753642347_0000}; taskId=attempt_202409240038591977716641753642347_0000_m_000000_0, status=''}; org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter@16493ec5}; outputPath=s3a://raw/olhovivo/corredor/dt=2024-09-24, workPath=s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/_temporary/attempt_202409240038591977716641753642347_0000_m_000000_0, algorithmVersion=1, skipCleanup=false, ignoreCleanupFailures=false} for s3a://raw/olhovivo/corredor/dt=2024-09-24
+[2024-09-24T00:39:01.246+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2024-09-24T00:39:01.247+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_202409240038598059568877946539896_0000_m_000002_2
+[2024-09-24T00:39:01.298+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO Executor: Finished task 7.0 in stage 0.0 (TID 7). 2871 bytes result sent to driver
+[2024-09-24T00:39:01.310+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO PythonRunner: Times: total = 842, boot = 643, init = 198, finish = 1
+[2024-09-24T00:39:01.319+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO PythonRunner: Times: total = 853, boot = 646, init = 207, finish = 0
+[2024-09-24T00:39:01.323+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO TaskSetManager: Finished task 7.0 in stage 0.0 (TID 7) in 1108 ms on spark-master (executor driver) (1/12)
+[2024-09-24T00:39:01.329+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 36303
+[2024-09-24T00:39:01.330+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 2871 bytes result sent to driver
+[2024-09-24T00:39:01.330+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_202409240038593045322987615554887_0000_m_000004_4
+[2024-09-24T00:39:01.334+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SparkHadoopMapRedUtil: No need to commit output of task because needsTaskCommit=false: attempt_202409240038597854560658717871951_0000_m_000009_9
+[2024-09-24T00:39:01.337+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO Executor: Finished task 9.0 in stage 0.0 (TID 9). 2828 bytes result sent to driver
+[2024-09-24T00:39:01.337+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 1127 ms on spark-master (executor driver) (2/12)
+[2024-09-24T00:39:01.342+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO Executor: Finished task 4.0 in stage 0.0 (TID 4). 2828 bytes result sent to driver
+[2024-09-24T00:39:01.342+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO PythonRunner: Times: total = 792, boot = 598, init = 194, finish = 0
+[2024-09-24T00:39:01.345+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO PythonRunner: Times: total = 782, boot = 613, init = 168, finish = 1
+[2024-09-24T00:39:01.346+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO PythonRunner: Times: total = 772, boot = 593, init = 177, finish = 2
+[2024-09-24T00:39:01.349+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO TaskSetManager: Finished task 9.0 in stage 0.0 (TID 9) in 1130 ms on spark-master (executor driver) (3/12)
+[2024-09-24T00:39:01.350+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO PythonRunner: Times: total = 813, boot = 620, init = 193, finish = 0
+[2024-09-24T00:39:01.351+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO PythonRunner: Times: total = 821, boot = 606, init = 214, finish = 1
+[2024-09-24T00:39:01.351+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO TaskSetManager: Finished task 4.0 in stage 0.0 (TID 4) in 1134 ms on spark-master (executor driver) (4/12)
+[2024-09-24T00:39:01.352+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO PythonRunner: Times: total = 767, boot = 610, init = 157, finish = 0
+[2024-09-24T00:39:01.352+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO PythonRunner: Times: total = 838, boot = 620, init = 218, finish = 0
+[2024-09-24T00:39:01.363+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO PythonRunner: Times: total = 876, boot = 586, init = 290, finish = 0
+[2024-09-24T00:39:01.591+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: Saved output of task 'attempt_202409240038597593960790258102198_0000_m_000008_8' to s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/task_202409240038597593960790258102198_0000_m_000008
+[2024-09-24T00:39:01.593+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SparkHadoopMapRedUtil: attempt_202409240038597593960790258102198_0000_m_000008_8: Committed. Elapsed time: 177 ms.
+[2024-09-24T00:39:01.608+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO Executor: Finished task 8.0 in stage 0.0 (TID 8). 2957 bytes result sent to driver
+[2024-09-24T00:39:01.608+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO TaskSetManager: Finished task 8.0 in stage 0.0 (TID 8) in 1394 ms on spark-master (executor driver) (5/12)
+[2024-09-24T00:39:01.616+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: Saved output of task 'attempt_202409240038592546657652397597435_0000_m_000006_6' to s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/task_202409240038592546657652397597435_0000_m_000006
+[2024-09-24T00:39:01.617+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SparkHadoopMapRedUtil: attempt_202409240038592546657652397597435_0000_m_000006_6: Committed. Elapsed time: 201 ms.
+[2024-09-24T00:39:01.620+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO Executor: Finished task 6.0 in stage 0.0 (TID 6). 2914 bytes result sent to driver
+[2024-09-24T00:39:01.624+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO TaskSetManager: Finished task 6.0 in stage 0.0 (TID 6) in 1412 ms on spark-master (executor driver) (6/12)
+[2024-09-24T00:39:01.632+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: Saved output of task 'attempt_202409240038597661833957000060209_0000_m_000005_5' to s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/task_202409240038597661833957000060209_0000_m_000005
+[2024-09-24T00:39:01.634+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SparkHadoopMapRedUtil: attempt_202409240038597661833957000060209_0000_m_000005_5: Committed. Elapsed time: 187 ms.
+[2024-09-24T00:39:01.634+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: Saved output of task 'attempt_202409240038591973614574659490957_0000_m_000001_1' to s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/task_202409240038591973614574659490957_0000_m_000001
+[2024-09-24T00:39:01.636+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SparkHadoopMapRedUtil: attempt_202409240038591973614574659490957_0000_m_000001_1: Committed. Elapsed time: 222 ms.
+[2024-09-24T00:39:01.644+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 2914 bytes result sent to driver
+[2024-09-24T00:39:01.644+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO Executor: Finished task 5.0 in stage 0.0 (TID 5). 2914 bytes result sent to driver
+[2024-09-24T00:39:01.645+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 1432 ms on spark-master (executor driver) (7/12)
+[2024-09-24T00:39:01.645+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO TaskSetManager: Finished task 5.0 in stage 0.0 (TID 5) in 1430 ms on spark-master (executor driver) (8/12)
+[2024-09-24T00:39:01.656+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: Saved output of task 'attempt_202409240038595385183842761813180_0000_m_000010_10' to s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/task_202409240038595385183842761813180_0000_m_000010
+[2024-09-24T00:39:01.657+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SparkHadoopMapRedUtil: attempt_202409240038595385183842761813180_0000_m_000010_10: Committed. Elapsed time: 241 ms.
+[2024-09-24T00:39:01.667+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO Executor: Finished task 10.0 in stage 0.0 (TID 10). 2914 bytes result sent to driver
+[2024-09-24T00:39:01.672+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: Saved output of task 'attempt_202409240038597570690820501019113_0000_m_000011_11' to s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/task_202409240038597570690820501019113_0000_m_000011
+[2024-09-24T00:39:01.672+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SparkHadoopMapRedUtil: attempt_202409240038597570690820501019113_0000_m_000011_11: Committed. Elapsed time: 245 ms.
+[2024-09-24T00:39:01.673+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO TaskSetManager: Finished task 10.0 in stage 0.0 (TID 10) in 1456 ms on spark-master (executor driver) (9/12)
+[2024-09-24T00:39:01.674+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO Executor: Finished task 11.0 in stage 0.0 (TID 11). 2914 bytes result sent to driver
+[2024-09-24T00:39:01.685+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO TaskSetManager: Finished task 11.0 in stage 0.0 (TID 11) in 1466 ms on spark-master (executor driver) (10/12)
+[2024-09-24T00:39:01.689+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: Saved output of task 'attempt_202409240038593455647239531856178_0000_m_000003_3' to s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/task_202409240038593455647239531856178_0000_m_000003
+[2024-09-24T00:39:01.689+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SparkHadoopMapRedUtil: attempt_202409240038593455647239531856178_0000_m_000003_3: Committed. Elapsed time: 274 ms.
+[2024-09-24T00:39:01.702+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO Executor: Finished task 3.0 in stage 0.0 (TID 3). 2914 bytes result sent to driver
+[2024-09-24T00:39:01.702+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO TaskSetManager: Finished task 3.0 in stage 0.0 (TID 3) in 1482 ms on spark-master (executor driver) (11/12)
+[2024-09-24T00:39:01.746+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileOutputCommitter: Saved output of task 'attempt_202409240038591977716641753642347_0000_m_000000_0' to s3a://raw/olhovivo/corredor/dt=2024-09-24/_temporary/0/task_202409240038591977716641753642347_0000_m_000000
+[2024-09-24T00:39:01.747+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO SparkHadoopMapRedUtil: attempt_202409240038591977716641753642347_0000_m_000000_0: Committed. Elapsed time: 330 ms.
+[2024-09-24T00:39:01.750+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 2828 bytes result sent to driver
+[2024-09-24T00:39:01.754+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 1563 ms on spark-master (executor driver) (12/12)
+[2024-09-24T00:39:01.754+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+[2024-09-24T00:39:01.764+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO DAGScheduler: ResultStage 0 (save at NativeMethodAccessorImpl.java:0) finished in 1.726 s
+[2024-09-24T00:39:01.767+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2024-09-24T00:39:01.768+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+[2024-09-24T00:39:01.773+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO DAGScheduler: Job 0 finished: save at NativeMethodAccessorImpl.java:0, took 1.765597 s
+[2024-09-24T00:39:01.782+0000] {ssh.py:524} INFO - 24/09/24 00:39:01 INFO FileFormatWriter: Start to commit write Job 32754b76-3771-4061-a814-fa681ad30cf6.
+[2024-09-24T00:39:02.499+0000] {ssh.py:524} INFO - 24/09/24 00:39:02 INFO FileFormatWriter: Write Job 32754b76-3771-4061-a814-fa681ad30cf6 committed. Elapsed time: 715 ms.
+[2024-09-24T00:39:02.505+0000] {ssh.py:524} INFO - 24/09/24 00:39:02 INFO FileFormatWriter: Finished processing stats for write job 32754b76-3771-4061-a814-fa681ad30cf6.
+[2024-09-24T00:39:02.508+0000] {ssh.py:524} INFO - [DEBUG] Done.
+[2024-09-24T00:39:02.571+0000] {ssh.py:524} INFO - 24/09/24 00:39:02 INFO SparkContext: Invoking stop() from shutdown hook
+[2024-09-24T00:39:02.597+0000] {ssh.py:524} INFO - 24/09/24 00:39:02 INFO SparkUI: Stopped Spark web UI at http://spark-master:4044
+[2024-09-24T00:39:02.651+0000] {ssh.py:524} INFO - 24/09/24 00:39:02 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2024-09-24T00:39:02.669+0000] {ssh.py:524} INFO - 24/09/24 00:39:02 INFO MemoryStore: MemoryStore cleared
+[2024-09-24T00:39:02.671+0000] {ssh.py:524} INFO - 24/09/24 00:39:02 INFO BlockManager: BlockManager stopped
+[2024-09-24T00:39:02.679+0000] {ssh.py:524} INFO - 24/09/24 00:39:02 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2024-09-24T00:39:02.683+0000] {ssh.py:524} INFO - 24/09/24 00:39:02 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2024-09-24T00:39:02.705+0000] {ssh.py:524} INFO - 24/09/24 00:39:02 INFO SparkContext: Successfully stopped SparkContext
+[2024-09-24T00:39:02.715+0000] {ssh.py:524} INFO - 24/09/24 00:39:02 INFO ShutdownHookManager: Shutdown hook called
+[2024-09-24T00:39:02.722+0000] {ssh.py:524} INFO - 24/09/24 00:39:02 INFO ShutdownHookManager: Deleting directory /tmp/spark-0eaef784-9adf-4a30-bf07-75301db98851/pyspark-a6693bc3-b288-4808-9db4-03339244a514
+[2024-09-24T00:39:02.745+0000] {ssh.py:524} INFO - 24/09/24 00:39:02 INFO ShutdownHookManager: Deleting directory /tmp/spark-e57e6ffb-791c-4ed9-9f20-9932fd060f40
+[2024-09-24T00:39:02.752+0000] {ssh.py:524} INFO - 24/09/24 00:39:02 INFO ShutdownHookManager: Deleting directory /tmp/spark-0eaef784-9adf-4a30-bf07-75301db98851
+[2024-09-24T00:39:02.766+0000] {ssh.py:524} INFO - 24/09/24 00:39:02 INFO MetricsSystemImpl: Stopping s3a-file-system metrics system...
+[2024-09-24T00:39:02.767+0000] {ssh.py:524} INFO - 24/09/24 00:39:02 INFO MetricsSystemImpl: s3a-file-system metrics system stopped.
+[2024-09-24T00:39:02.767+0000] {ssh.py:524} INFO - 24/09/24 00:39:02 INFO MetricsSystemImpl: s3a-file-system metrics system shutdown complete.
+[2024-09-24T00:39:02.978+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=raw_ingestion_15min, task_id=spark_raw_ingestion_corredor, execution_date=20240924T003849, start_date=20240924T003850, end_date=20240924T003902
+[2024-09-24T00:39:03.021+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-09-24T00:39:03.071+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

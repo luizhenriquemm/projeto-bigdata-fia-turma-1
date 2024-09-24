@@ -52,4 +52,15 @@ with airflow.DAG('raw_ingestion_15min',
         dag=dag
     )
 
-    [task_spark_raw_ingestion_corredor, task_spark_raw_ingestion_empresa, task_spark_raw_ingestion_posicao] >> task_trigger_stage_processing
+    task_trigger_business_processing = TriggerDagRunOperator(
+        task_id='trigger_business_processing',
+        trigger_dag_id='business_processing',  # O ID da DAG que você deseja disparar
+        execution_date='{{ ds }}',  # Passa a data de execução da DAG
+        reset_dag_run=True,  # Reexecuta a DAG, mesmo que já tenha sido executada nesse horário
+        wait_for_completion=True,  # Se deseja esperar pela conclusão da DAG chamada
+        poke_interval=10,  # Intervalo de verificação (em segundos) até que a DAG chamada termine
+        allowed_states=['success'],  # Estado da DAG chamada para continuar
+        dag=dag
+    )
+
+    [task_spark_raw_ingestion_corredor, task_spark_raw_ingestion_empresa, task_spark_raw_ingestion_posicao] >> task_trigger_stage_processing >> task_trigger_business_processing

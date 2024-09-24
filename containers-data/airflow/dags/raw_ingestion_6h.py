@@ -21,8 +21,8 @@ with airflow.DAG('raw_ingestion_6h',
         task_id='spark_raw_ingestion_previsao',
         ssh_conn_id='spark_ssh_default',  # Specify your Spark cluster SSH connection ID
         command = 'export SPARK_HOME=/usr/local/spark; /opt/conda/bin/spark-submit --master local[*] --driver-cores 4 --executor-cores 4 --driver-memory 16G --executor-memory 16G /opt/shared/scripts/raw_ingestion.py {{ ds }} previsao',
-        conn_timeout=3600,  # Timeout de conexão (em segundos) = 10 minutos
-        cmd_timeout=3600,   # Timeout de execução do comando (em segundos) = 10 minutos
+        conn_timeout=3600,  # Timeout de conexão (em segundos) = 1 hora
+        cmd_timeout=3600,   # Timeout de execução do comando (em segundos) = 1 hora
     )
 
     # task_trigger_stage_processing = TriggerDagRunOperator(
