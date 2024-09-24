@@ -285,7 +285,7 @@ services:
         MB_DB_HOST: db
         MB_PASSWORD_COMPLEXITY: "weak"
         MB_PASSWORD_LENGTH: 4
-        #user user@datalab.com.br pass datalab
+        #user user@datalab.com.br pass senhadatalab
       volumes:
         - ./containers-data/util:/util
  

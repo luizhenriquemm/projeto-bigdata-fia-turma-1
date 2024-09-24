@@ -16,6 +16,22 @@ with airflow.DAG('raw_ingestion_6h',
                   schedule_interval='0 0,6,12,18 * * *',
                   catchup=False,
                   max_active_runs=1) as dag:
+    
+    task_spark_raw_ingestion_linhas = SSHOperator(
+        task_id='spark_raw_ingestion_linhas',
+        ssh_conn_id='spark_ssh_default',  # Specify your Spark cluster SSH connection ID
+        command = 'export SPARK_HOME=/usr/local/spark; /opt/conda/bin/spark-submit --master local[*] --driver-cores 4 --executor-cores 4 --driver-memory 16G --executor-memory 16G /opt/shared/scripts/raw_ingestion.py {{ ds }} linhas',
+        conn_timeout=3600,  # Timeout de conexão (em segundos) = 1 hora
+        cmd_timeout=3600,   # Timeout de execução do comando (em segundos) = 1 hora
+    )
+    
+    task_spark_raw_ingestion_paradas = SSHOperator(
+        task_id='spark_raw_ingestion_paradas',
+        ssh_conn_id='spark_ssh_default',  # Specify your Spark cluster SSH connection ID
+        command = 'export SPARK_HOME=/usr/local/spark; /opt/conda/bin/spark-submit --master local[*] --driver-cores 4 --executor-cores 4 --driver-memory 16G --executor-memory 16G /opt/shared/scripts/raw_ingestion.py {{ ds }} paradas',
+        conn_timeout=3600,  # Timeout de conexão (em segundos) = 1 hora
+        cmd_timeout=3600,   # Timeout de execução do comando (em segundos) = 1 hora
+    )
 
     task_spark_raw_ingestion_previsao = SSHOperator(
         task_id='spark_raw_ingestion_previsao',
@@ -36,4 +52,4 @@ with airflow.DAG('raw_ingestion_6h',
     #     dag=dag
     # )
 
-    task_spark_raw_ingestion_previsao
+    task_spark_raw_ingestion_linhas >> task_spark_raw_ingestion_paradas >> task_spark_raw_ingestion_previsao

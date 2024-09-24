@@ -113,3 +113,72 @@ deltaTable.alias('destiny') \
 
 deltaTable.optimize()
 deltaTable.vacuum(168)
+
+
+# Paradas API
+df_paradas_api = spark.table("stage.paradas_api")
+
+DeltaTable.createIfNotExists(spark) \
+    .tableName("business.paradas_api") \
+    .addColumns(df_paradas_api.schema) \
+    .execute()
+
+deltaTable = DeltaTable.forName(spark, "business.paradas_api")
+
+deltaTable.alias('destiny') \
+    .merge(
+        df_paradas_api.alias('source'),
+        'source.cp = destiny.cp'
+    ) \
+    .whenMatchedUpdateAll() \
+    .whenNotMatchedInsertAll() \
+    .execute()
+
+deltaTable.optimize()
+deltaTable.vacuum(168)
+
+
+# Trips
+df_trips = spark.table("stage.trips")
+
+DeltaTable.createIfNotExists(spark) \
+    .tableName("business.trips") \
+    .addColumns(df_trips.schema) \
+    .execute()
+
+deltaTable = DeltaTable.forName(spark, "business.trips")
+
+deltaTable.alias('destiny') \
+    .merge(
+        df_trips.alias('source'),
+        'source.route_id = destiny.route_id and source.direction_id = destiny.direction_id'
+    ) \
+    .whenMatchedUpdateAll() \
+    .whenNotMatchedInsertAll() \
+    .execute()
+
+deltaTable.optimize()
+deltaTable.vacuum(168)
+
+
+# Linhas API
+df_linhas_api = spark.table("stage.linhas_api")
+
+DeltaTable.createIfNotExists(spark) \
+    .tableName("business.linhas_api") \
+    .addColumns(df_linhas_api.schema) \
+    .execute()
+
+deltaTable = DeltaTable.forName(spark, "business.linhas_api")
+
+deltaTable.alias('destiny') \
+    .merge(
+        df_linhas_api.alias('source'),
+        'source.cl = destiny.cl'
+    ) \
+    .whenMatchedUpdateAll() \
+    .whenNotMatchedInsertAll() \
+    .execute()
+
+deltaTable.optimize()
+deltaTable.vacuum(168)

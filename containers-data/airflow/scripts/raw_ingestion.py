@@ -2,15 +2,18 @@ import requests, json, time, sys
 from pyspark.sql import SparkSession, Row
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
+from datetime import datetime
 
 dt_now = sys.argv[1]
 endpoint = sys.argv[2]
+hr = datetime.now().strftime("%H:%M")
 app_name = "raw_ingestion_" + str(endpoint)
 if endpoint == "":
     endpoint = None
     app_name = "raw_ingestion"
 print("[DEBUG] dt_now: " + str(dt_now))
 print("[DEBUG] endpoint: " + str(endpoint))
+print("[DEBUG] hr: " + str(hr))
 
 spark = (SparkSession.builder
              .appName(app_name) # Name the app
@@ -72,6 +75,32 @@ def obterPrevisaoParada(stop_id, session):
 
         if r.status_code == 200:
             return {"stop_id": stop_id, **r.json()}
+
+        elif r.status_code == 429:
+            time.sleep(60)
+            
+        else:
+            return None
+
+def obterLinhas(route_id, session):
+    while True:
+        r = session.get(f"https://api.olhovivo.sptrans.com.br/v2.1/Linha/Buscar?termosBusca={route_id}")
+
+        if r.status_code == 200:
+            return {"route_id": route_id, "hr": hr, "data": r.json()}
+
+        elif r.status_code == 429:
+            time.sleep(60)
+            
+        else:
+            return None
+
+def obterParadasLinha(linha_id, session):
+    while True:
+        r = session.get(f"https://api.olhovivo.sptrans.com.br/v2.1/Parada/BuscarParadasPorLinha?codigoLinha={linha_id}")
+
+        if r.status_code == 200:
+            return {"linha_id": linha_id, "hr": hr, "data": r.json()}
 
         elif r.status_code == 429:
             time.sleep(60)
@@ -141,6 +170,54 @@ previsao_schema = StructType([
     ]), True)
 ])
 
+linhas_schema_pre = StructType([
+    StructField("route_id", StringType(), True),
+    StructField("hr", StringType(), True),
+    StructField("data", ArrayType(StructType([
+        StructField("cl", StringType(), True),
+        StructField("lc", StringType(), True),
+        StructField("lt", StringType(), True),
+        StructField("sl", StringType(), True),
+        StructField("tl", StringType(), True),
+        StructField("tp", StringType(), True),
+        StructField("ts", StringType(), True)
+    ])), True)
+])
+
+linhas_schema = StructType([
+    StructField("route_id", StringType(), True),
+    StructField("hr", StringType(), True),
+    StructField("cl", StringType(), True),
+    StructField("lc", StringType(), True),
+    StructField("lt", StringType(), True),
+    StructField("sl", StringType(), True),
+    StructField("tl", StringType(), True),
+    StructField("tp", StringType(), True),
+    StructField("ts", StringType(), True)
+])
+
+paradas_schema_pre = StructType([
+    StructField("linha_id", StringType(), True),
+    StructField("hr", StringType(), True),
+    StructField("data", ArrayType(StructType([
+        StructField("cp", StringType(), True),
+        StructField("ed", StringType(), True),
+        StructField("np", StringType(), True),
+        StructField("px", StringType(), True),
+        StructField("py", StringType(), True)
+    ])), True)
+])
+
+paradas_schema = StructType([
+    StructField("linha_id", StringType(), True),
+    StructField("hr", StringType(), True),
+    StructField("cp", StringType(), True),
+    StructField("ed", StringType(), True),
+    StructField("np", StringType(), True),
+    StructField("px", StringType(), True),
+    StructField("py", StringType(), True)
+])
+
 session = autenticar()
 
 if endpoint == "corredor" or endpoint is None:
@@ -158,14 +235,36 @@ if endpoint == "posicao" or endpoint is None:
     posicao_df = spark.createDataFrame(posicao, posicao_schema)
     posicao_df.write.mode("append").format("json").save(f"s3a://raw/olhovivo/posicao/dt={dt_now}/")
 
+if endpoint == "linhas" or endpoint is None:
+    linhas = spark.read.csv("s3a://raw/GTFS/linhas/*.txt", header=True)
+    linhas_rdd = linhas.select("route_id").distinct().rdd
+    linhas_rdd_data = linhas_rdd.map(lambda x: x.asDict()["route_id"]).map(lambda x: obterLinhas(x, session)).map(lambda x: Row(data=json.dumps(x)))
+    linhas_df = spark.createDataFrame(linhas_rdd_data, StructType([StructField("data", StringType(), True)]))
+    linhas_df.write.mode("overwrite").format("parquet").save("s3a://raw/olhovivo/linhas_unparsed/")  # Etapa intermediaria
+    print("[DEBUG] paradas_df count is " + str(linhas_df.count()))
+    linhas_df = spark.read.schema(StructType([StructField("data", StringType(), True)])).parquet("s3a://raw/olhovivo/linhas_unparsed/")
+    linhas_parsed_df = linhas_df.select(from_json("data", linhas_schema_pre).alias("data")).select("data.*").select("route_id", "hr", explode("data").alias("data")).select("route_id", "hr", "data.*")
+    linhas_parsed_df.write.mode("append").format("json").save(f"s3a://raw/olhovivo/linhas/dt={dt_now}/")
+
+if endpoint == "paradas" or endpoint is None:
+    linhas_df = spark.read.schema(linhas_schema).format("json").load(f"s3a://raw/olhovivo/linhas/dt={dt_now}/")
+    linhas_rdd = linhas_df.select("cl").distinct().rdd
+    paradas_rdd = linhas_rdd.map(lambda x: x.asDict()["cl"]).map(lambda x: obterParadasLinha(x, session)).map(lambda x: Row(data=json.dumps(x)))
+    paradas_df = spark.createDataFrame(paradas_rdd, StructType([StructField("data", StringType(), True)]))
+    paradas_df.write.mode("overwrite").format("parquet").save("s3a://raw/olhovivo/paradas_unparsed/")  # Etapa intermediaria
+    print("[DEBUG] paradas_df count is " + str(paradas_df.count()))
+    paradas_df = spark.read.schema(StructType([StructField("data", StringType(), True)])).parquet("s3a://raw/olhovivo/paradas_unparsed/")
+    paradas_parsed_df = paradas_df.select(from_json("data", paradas_schema_pre).alias("data")).select("data.*").select("linha_id", "hr", explode("data").alias("data")).select("linha_id", "hr", "data.*")
+    paradas_parsed_df.write.mode("append").format("json").save(f"s3a://raw/olhovivo/paradas/dt={dt_now}/")
+
 if endpoint == "previsao" or endpoint is None:
     paradas = spark.read.csv("s3a://raw/GTFS/paradas/*.txt", header=True)
     paradas_rdd = paradas.filter("stop_desc is not null").select("stop_id").rdd
     previsao = paradas_rdd.map(lambda x: x.asDict()["stop_id"]).map(lambda x: obterPrevisaoParada(x, session)).map(lambda x: Row(data=json.dumps(x)))
     previsao_df = spark.createDataFrame(previsao, StructType([StructField("data", StringType(), True)]))
-    previsao_df.write.mode("overwrite").format("parquet").save("s3a://raw/olhovivo/paradas_unparsed/")  # Etapa intermediaria
+    previsao_df.write.mode("overwrite").format("parquet").save("s3a://raw/olhovivo/previsao_unparsed/")  # Etapa intermediaria
     print("[DEBUG] previsao_df count is " + str(previsao_df.count()))
-    previsao_df = spark.read.schema(StructType([StructField("data", StringType(), True)])).parquet("s3a://raw/olhovivo/paradas_unparsed/")
+    previsao_df = spark.read.schema(StructType([StructField("data", StringType(), True)])).parquet("s3a://raw/olhovivo/previsao_unparsed/")
     previsao_parsed_df = previsao_df.select(from_json("data", previsao_schema).alias("data")).select("data.*")
     previsao_parsed_df.write.mode("append").format("json").save(f"s3a://raw/olhovivo/previsao/dt={dt_now}/")
 

@@ -90,6 +90,34 @@ deltaTable.optimize()
 deltaTable.vacuum(168)
 
 
+# Linhas API
+df_linhas_api = spark.read.json(f"s3a://raw/olhovivo/linhas/dt={dt_now}/")
+
+window_spec = Window.partitionBy("cl").orderBy(col("hr").desc())
+df_linhas_api_tratado = df_linhas_api.withColumn("row_num", row_number().over(window_spec)) \
+                       .filter(col("row_num") == 1) \
+                       .drop("row_num")
+
+DeltaTable.createIfNotExists(spark) \
+    .tableName("stage.linhas_api")\
+    .addColumns(df_linhas_api_tratado.schema)\
+    .execute()
+
+deltaTable = DeltaTable.forName(spark, "stage.linhas_api")
+
+deltaTable.alias('destiny') \
+    .merge(
+        df_linhas_api_tratado.alias('source'),
+        'source.cl = destiny.cl'
+    ) \
+    .whenMatchedUpdateAll() \
+    .whenNotMatchedInsertAll() \
+    .execute()
+
+deltaTable.optimize()
+deltaTable.vacuum(168)
+
+
 # Corredores
 df_corredor = spark.read.json(f"s3a://raw/olhovivo/corredor/dt={dt_now}/")
 df_corredor = df_corredor.select(
@@ -169,6 +197,34 @@ deltaTable.alias('destiny') \
     .merge(
         df_posicao_tratado.alias('source'),
         'source.Linha.cl = destiny.Linha.cl and source.Linha.sl = destiny.Linha.sl'
+    ) \
+    .whenMatchedUpdateAll() \
+    .whenNotMatchedInsertAll() \
+    .execute()
+
+deltaTable.optimize()
+deltaTable.vacuum(168)
+
+
+# Paradas API
+df_paradas_api = spark.read.json(f"s3a://raw/olhovivo/paradas/dt={dt_now}/")
+
+window_spec = Window.partitionBy("cp").orderBy(col("hr").desc())
+df_paradas_api_tratado = df_paradas_api.withColumn("row_num", row_number().over(window_spec)) \
+                       .filter(col("row_num") == 1) \
+                       .drop("row_num")
+
+DeltaTable.createIfNotExists(spark) \
+    .tableName("stage.paradas_api")\
+    .addColumns(df_paradas_api_tratado.schema)\
+    .execute()
+
+deltaTable = DeltaTable.forName(spark, "stage.paradas_api")
+
+deltaTable.alias('destiny') \
+    .merge(
+        df_paradas_api_tratado.alias('source'),
+        'source.cp = destiny.cp'
     ) \
     .whenMatchedUpdateAll() \
     .whenNotMatchedInsertAll() \
