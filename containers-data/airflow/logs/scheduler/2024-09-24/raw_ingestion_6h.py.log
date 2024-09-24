@@ -5901,3 +5901,652 @@
 [2024-09-24T21:57:14.577+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
 [2024-09-24T21:57:14.616+0000] {logging_mixin.py:154} INFO - [2024-09-24T21:57:14.616+0000] {dag.py:2941} INFO - Sync 1 DAGs
 [2024-09-24T21:57:14.676+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.126 seconds
+[2024-09-24T21:57:44.920+0000] {processor.py:157} INFO - Started process (PID=7775) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T21:57:44.921+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T21:57:44.921+0000] {logging_mixin.py:154} INFO - [2024-09-24T21:57:44.921+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T21:57:44.946+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T21:57:44.984+0000] {logging_mixin.py:154} INFO - [2024-09-24T21:57:44.984+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T21:57:45.036+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.118 seconds
+[2024-09-24T21:58:15.327+0000] {processor.py:157} INFO - Started process (PID=7786) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T21:58:15.327+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T21:58:15.329+0000] {logging_mixin.py:154} INFO - [2024-09-24T21:58:15.329+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T21:58:15.352+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T21:58:15.389+0000] {logging_mixin.py:154} INFO - [2024-09-24T21:58:15.389+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T21:58:15.444+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.119 seconds
+[2024-09-24T21:58:45.863+0000] {processor.py:157} INFO - Started process (PID=7797) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T21:58:45.864+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T21:58:45.865+0000] {logging_mixin.py:154} INFO - [2024-09-24T21:58:45.865+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T21:58:45.889+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T21:58:45.928+0000] {logging_mixin.py:154} INFO - [2024-09-24T21:58:45.928+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T21:58:45.986+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.125 seconds
+[2024-09-24T21:59:16.239+0000] {processor.py:157} INFO - Started process (PID=7808) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T21:59:16.239+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T21:59:16.240+0000] {logging_mixin.py:154} INFO - [2024-09-24T21:59:16.240+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T21:59:16.266+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T21:59:16.303+0000] {logging_mixin.py:154} INFO - [2024-09-24T21:59:16.303+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T21:59:16.362+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.126 seconds
+[2024-09-24T21:59:46.615+0000] {processor.py:157} INFO - Started process (PID=7819) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T21:59:46.615+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T21:59:46.616+0000] {logging_mixin.py:154} INFO - [2024-09-24T21:59:46.616+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T21:59:46.640+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T21:59:46.677+0000] {logging_mixin.py:154} INFO - [2024-09-24T21:59:46.677+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T21:59:46.734+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.121 seconds
+[2024-09-24T22:00:17.160+0000] {processor.py:157} INFO - Started process (PID=7835) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:00:17.161+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:00:17.162+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:00:17.162+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:00:17.196+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:00:17.245+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:00:17.245+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:00:17.311+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.156 seconds
+[2024-09-24T22:00:47.633+0000] {processor.py:157} INFO - Started process (PID=7846) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:00:47.633+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:00:47.634+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:00:47.634+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:00:47.660+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:00:47.707+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:00:47.707+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:00:47.772+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.142 seconds
+[2024-09-24T22:01:18.301+0000] {processor.py:157} INFO - Started process (PID=7858) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:01:18.301+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:01:18.302+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:01:18.302+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:01:18.328+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:01:18.370+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:01:18.370+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:01:18.431+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.133 seconds
+[2024-09-24T22:01:48.864+0000] {processor.py:157} INFO - Started process (PID=7870) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:01:48.864+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:01:48.865+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:01:48.865+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:01:48.889+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:01:48.927+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:01:48.926+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:01:48.979+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.118 seconds
+[2024-09-24T22:02:19.322+0000] {processor.py:157} INFO - Started process (PID=7881) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:02:19.323+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:02:19.324+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:02:19.323+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:02:19.363+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:02:19.436+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:02:19.435+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:02:19.524+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.205 seconds
+[2024-09-24T22:02:49.826+0000] {processor.py:157} INFO - Started process (PID=7892) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:02:49.827+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:02:49.829+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:02:49.828+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:02:49.861+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:02:49.923+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:02:49.923+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:02:50.014+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.191 seconds
+[2024-09-24T22:03:20.237+0000] {processor.py:157} INFO - Started process (PID=7903) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:03:20.237+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:03:20.238+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:03:20.238+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:03:20.274+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:03:20.330+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:03:20.330+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:03:20.458+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.225 seconds
+[2024-09-24T22:03:50.687+0000] {processor.py:157} INFO - Started process (PID=7914) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:03:50.687+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:03:50.689+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:03:50.689+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:03:50.727+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:03:50.787+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:03:50.786+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:03:50.905+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.222 seconds
+[2024-09-24T22:04:21.370+0000] {processor.py:157} INFO - Started process (PID=7925) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:04:21.371+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:04:21.372+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:04:21.372+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:04:21.396+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:04:21.437+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:04:21.437+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:04:21.497+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.128 seconds
+[2024-09-24T22:04:51.928+0000] {processor.py:157} INFO - Started process (PID=7936) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:04:51.929+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:04:51.930+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:04:51.930+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:04:51.958+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:04:52.007+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:04:52.006+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:04:52.071+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.145 seconds
+[2024-09-24T22:05:22.461+0000] {processor.py:157} INFO - Started process (PID=7948) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:05:22.463+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:05:22.464+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:05:22.464+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:05:22.507+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:05:22.578+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:05:22.578+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:05:22.692+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.239 seconds
+[2024-09-24T22:05:53.153+0000] {processor.py:157} INFO - Started process (PID=7965) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:05:53.154+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:05:53.156+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:05:53.156+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:05:53.216+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:05:53.294+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:05:53.294+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:05:53.390+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.244 seconds
+[2024-09-24T22:06:23.696+0000] {processor.py:157} INFO - Started process (PID=7976) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:06:23.697+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:06:23.698+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:06:23.698+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:06:23.767+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:06:23.909+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:06:23.909+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:06:24.052+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.360 seconds
+[2024-09-24T22:06:54.252+0000] {processor.py:157} INFO - Started process (PID=7987) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:06:54.252+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:06:54.253+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:06:54.253+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:06:54.279+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:06:54.321+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:06:54.321+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:06:54.383+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.134 seconds
+[2024-09-24T22:07:24.720+0000] {processor.py:157} INFO - Started process (PID=7998) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:07:24.721+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:07:24.722+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:07:24.722+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:07:24.748+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:07:24.793+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:07:24.793+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:07:24.853+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.134 seconds
+[2024-09-24T22:07:55.200+0000] {processor.py:157} INFO - Started process (PID=8009) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:07:55.201+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:07:55.202+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:07:55.202+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:07:55.256+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:07:55.364+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:07:55.363+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:07:55.529+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.335 seconds
+[2024-09-24T22:08:25.700+0000] {processor.py:157} INFO - Started process (PID=8020) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:08:25.701+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:08:25.701+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:08:25.701+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:08:25.725+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:08:25.765+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:08:25.764+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:08:25.825+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.126 seconds
+[2024-09-24T22:08:56.270+0000] {processor.py:157} INFO - Started process (PID=8031) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:08:56.270+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:08:56.271+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:08:56.271+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:08:56.299+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:08:56.341+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:08:56.340+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:08:56.408+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.142 seconds
+[2024-09-24T22:09:26.657+0000] {processor.py:157} INFO - Started process (PID=8042) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:09:26.657+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:09:26.658+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:09:26.658+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:09:26.686+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:09:26.727+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:09:26.727+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:09:26.791+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.136 seconds
+[2024-09-24T22:09:57.060+0000] {processor.py:157} INFO - Started process (PID=8053) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:09:57.061+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:09:57.062+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:09:57.061+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:09:57.085+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:09:57.132+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:09:57.131+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:09:57.194+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.136 seconds
+[2024-09-24T22:10:27.473+0000] {processor.py:157} INFO - Started process (PID=8064) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:10:27.474+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:10:27.475+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:10:27.474+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:10:27.500+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:10:27.541+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:10:27.541+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:10:27.607+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.136 seconds
+[2024-09-24T22:10:57.948+0000] {processor.py:157} INFO - Started process (PID=8075) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:10:57.949+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:10:57.949+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:10:57.949+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:10:57.977+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:10:58.018+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:10:58.018+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:10:58.081+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.135 seconds
+[2024-09-24T22:11:28.348+0000] {processor.py:157} INFO - Started process (PID=8086) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:11:28.349+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:11:28.349+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:11:28.349+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:11:28.371+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:11:28.413+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:11:28.413+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:11:28.473+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.128 seconds
+[2024-09-24T22:11:58.907+0000] {processor.py:157} INFO - Started process (PID=8096) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:11:58.908+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:11:58.909+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:11:58.909+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:11:58.936+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:11:58.975+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:11:58.975+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:11:59.030+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.124 seconds
+[2024-09-24T22:12:29.418+0000] {processor.py:157} INFO - Started process (PID=8107) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:12:29.419+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:12:29.420+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:12:29.420+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:12:29.444+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:12:29.485+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:12:29.485+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:12:29.543+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.127 seconds
+[2024-09-24T22:12:59.808+0000] {processor.py:157} INFO - Started process (PID=8118) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:12:59.809+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:12:59.809+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:12:59.809+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:12:59.832+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:12:59.871+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:12:59.871+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:12:59.934+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.130 seconds
+[2024-09-24T22:13:30.199+0000] {processor.py:157} INFO - Started process (PID=8129) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:13:30.200+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:13:30.201+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:13:30.201+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:13:30.229+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:13:30.274+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:13:30.273+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:13:30.330+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.133 seconds
+[2024-09-24T22:14:00.657+0000] {processor.py:157} INFO - Started process (PID=8140) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:14:00.659+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:14:00.661+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:14:00.661+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:14:00.700+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:14:00.754+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:14:00.753+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:14:00.845+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.193 seconds
+[2024-09-24T22:14:31.138+0000] {processor.py:157} INFO - Started process (PID=8151) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:14:31.139+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:14:31.139+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:14:31.139+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:14:31.163+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:14:31.206+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:14:31.205+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:14:31.267+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.131 seconds
+[2024-09-24T22:15:01.761+0000] {processor.py:157} INFO - Started process (PID=8167) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:15:01.762+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:15:01.765+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:15:01.764+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:15:01.804+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:15:01.853+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:15:01.853+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:15:01.921+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.164 seconds
+[2024-09-24T22:15:32.559+0000] {processor.py:157} INFO - Started process (PID=8178) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:15:32.560+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:15:32.561+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:15:32.561+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:15:32.593+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:15:32.644+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:15:32.644+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:15:32.720+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.164 seconds
+[2024-09-24T22:16:03.566+0000] {processor.py:157} INFO - Started process (PID=8189) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:16:03.566+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:16:03.567+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:16:03.567+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:16:03.594+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:16:03.639+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:16:03.639+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:16:03.705+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.141 seconds
+[2024-09-24T22:16:34.375+0000] {processor.py:157} INFO - Started process (PID=8200) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:16:34.376+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:16:34.377+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:16:34.376+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:16:34.403+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:16:34.447+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:16:34.447+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:16:34.518+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.145 seconds
+[2024-09-24T22:17:04.966+0000] {processor.py:157} INFO - Started process (PID=8211) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:17:04.967+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:17:04.968+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:17:04.968+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:17:05.017+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:17:05.129+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:17:05.128+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:17:05.274+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.310 seconds
+[2024-09-24T22:17:35.674+0000] {processor.py:157} INFO - Started process (PID=8222) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:17:35.675+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:17:35.676+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:17:35.676+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:17:35.741+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:17:35.867+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:17:35.866+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:17:35.995+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.324 seconds
+[2024-09-24T22:18:06.414+0000] {processor.py:157} INFO - Started process (PID=8233) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:18:06.416+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:18:06.418+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:18:06.417+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:18:06.484+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:18:06.562+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:18:06.562+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:18:06.691+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.281 seconds
+[2024-09-24T22:18:37.104+0000] {processor.py:157} INFO - Started process (PID=8244) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:18:37.105+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:18:37.106+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:18:37.106+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:18:37.143+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:18:37.194+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:18:37.194+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:18:37.321+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.220 seconds
+[2024-09-24T22:19:07.854+0000] {processor.py:157} INFO - Started process (PID=8255) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:19:07.858+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:19:07.860+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:19:07.859+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:19:07.922+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:19:08.008+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:19:08.008+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:19:08.143+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.293 seconds
+[2024-09-24T22:19:38.709+0000] {processor.py:157} INFO - Started process (PID=8266) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:19:38.710+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:19:38.712+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:19:38.711+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:19:38.766+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:19:38.841+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:19:38.840+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:19:38.962+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.256 seconds
+[2024-09-24T22:20:09.703+0000] {processor.py:157} INFO - Started process (PID=8278) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:20:09.704+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:20:09.706+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:20:09.705+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:20:09.755+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:20:09.835+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:20:09.834+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:20:09.982+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.286 seconds
+[2024-09-24T22:20:40.484+0000] {processor.py:157} INFO - Started process (PID=8289) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:20:40.484+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:20:40.485+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:20:40.485+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:20:40.513+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:20:40.562+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:20:40.562+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:20:40.648+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.168 seconds
+[2024-09-24T22:21:11.088+0000] {processor.py:157} INFO - Started process (PID=8300) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:21:11.089+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:21:11.090+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:21:11.089+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:21:11.126+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:21:11.192+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:21:11.192+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:21:11.285+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.200 seconds
+[2024-09-24T22:21:41.772+0000] {processor.py:157} INFO - Started process (PID=8311) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:21:41.774+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:21:41.775+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:21:41.775+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:21:41.849+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:21:41.947+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:21:41.946+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:21:42.086+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.318 seconds
+[2024-09-24T22:22:12.572+0000] {processor.py:157} INFO - Started process (PID=8322) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:22:12.576+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:22:12.579+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:22:12.578+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:22:12.646+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:22:12.749+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:22:12.749+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:22:12.859+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.290 seconds
+[2024-09-24T22:22:43.471+0000] {processor.py:157} INFO - Started process (PID=8333) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:22:43.472+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:22:43.474+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:22:43.474+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:22:43.539+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:22:43.622+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:22:43.622+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:22:43.737+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.273 seconds
+[2024-09-24T22:23:14.029+0000] {processor.py:157} INFO - Started process (PID=8344) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:23:14.030+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:23:14.031+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:23:14.031+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:23:14.079+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:23:14.163+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:23:14.162+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:23:14.275+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.249 seconds
+[2024-09-24T22:23:44.703+0000] {processor.py:157} INFO - Started process (PID=8355) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:23:44.704+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:23:44.705+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:23:44.705+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:23:44.745+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:23:44.797+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:23:44.797+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:23:44.876+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.177 seconds
+[2024-09-24T22:24:15.628+0000] {processor.py:157} INFO - Started process (PID=8366) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:24:15.629+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:24:15.629+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:24:15.629+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:24:15.666+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:24:15.744+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:24:15.743+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:24:15.828+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.202 seconds
+[2024-09-24T22:24:46.349+0000] {processor.py:157} INFO - Started process (PID=8377) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:24:46.350+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:24:46.351+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:24:46.351+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:24:46.384+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:24:46.430+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:24:46.430+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:24:46.502+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.155 seconds
+[2024-09-24T22:25:16.841+0000] {processor.py:157} INFO - Started process (PID=8388) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:25:16.842+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:25:16.843+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:25:16.843+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:25:16.871+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:25:16.919+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:25:16.919+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:25:16.990+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.153 seconds
+[2024-09-24T22:25:47.265+0000] {processor.py:157} INFO - Started process (PID=8399) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:25:47.265+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:25:47.266+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:25:47.266+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:25:47.294+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:25:47.338+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:25:47.338+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:25:47.402+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.140 seconds
+[2024-09-24T22:26:17.879+0000] {processor.py:157} INFO - Started process (PID=8410) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:26:17.880+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:26:17.881+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:26:17.881+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:26:17.930+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:26:17.988+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:26:17.988+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:26:18.067+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.190 seconds
+[2024-09-24T22:26:48.315+0000] {processor.py:157} INFO - Started process (PID=8421) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:26:48.316+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:26:48.317+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:26:48.317+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:26:48.346+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:26:48.390+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:26:48.390+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:26:48.467+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.154 seconds
+[2024-09-24T22:27:18.740+0000] {processor.py:157} INFO - Started process (PID=8432) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:27:18.741+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:27:18.742+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:27:18.742+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:27:18.773+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:27:18.815+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:27:18.815+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:27:18.881+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.144 seconds
+[2024-09-24T22:27:49.172+0000] {processor.py:157} INFO - Started process (PID=8443) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:27:49.173+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:27:49.173+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:27:49.173+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:27:49.200+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:27:49.243+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:27:49.242+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:27:49.306+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.137 seconds
+[2024-09-24T22:28:19.627+0000] {processor.py:157} INFO - Started process (PID=8454) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:28:19.628+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:28:19.631+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:28:19.630+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:28:19.677+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:28:19.734+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:28:19.733+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:28:19.833+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.209 seconds
+[2024-09-24T22:28:50.092+0000] {processor.py:157} INFO - Started process (PID=8465) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:28:50.093+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:28:50.094+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:28:50.094+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:28:50.120+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:28:50.171+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:28:50.170+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:28:50.258+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.168 seconds
+[2024-09-24T22:29:20.506+0000] {processor.py:157} INFO - Started process (PID=8476) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:29:20.506+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:29:20.507+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:29:20.507+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:29:20.530+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:29:20.570+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:29:20.570+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:29:20.634+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.130 seconds
+[2024-09-24T22:29:50.965+0000] {processor.py:157} INFO - Started process (PID=8487) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:29:50.966+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:29:50.967+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:29:50.967+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:29:50.993+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:29:51.035+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:29:51.034+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:29:51.105+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.141 seconds
+[2024-09-24T22:30:21.521+0000] {processor.py:157} INFO - Started process (PID=8503) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:30:21.523+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:30:21.524+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:30:21.524+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:30:21.556+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:30:21.608+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:30:21.608+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:30:21.684+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.165 seconds
+[2024-09-24T22:30:52.562+0000] {processor.py:157} INFO - Started process (PID=8514) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:30:52.563+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:30:52.564+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:30:52.564+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:30:52.636+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:30:52.744+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:30:52.743+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:30:52.913+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.357 seconds
+[2024-09-24T22:31:23.599+0000] {processor.py:157} INFO - Started process (PID=8525) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:31:23.599+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:31:23.602+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:31:23.602+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:31:23.673+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:31:23.773+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:31:23.772+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:31:23.928+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.333 seconds
+[2024-09-24T22:31:54.434+0000] {processor.py:157} INFO - Started process (PID=8536) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:31:54.436+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:31:54.437+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:31:54.437+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:31:54.483+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:31:54.562+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:31:54.561+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:31:54.680+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.250 seconds
+[2024-09-24T22:32:25.027+0000] {processor.py:157} INFO - Started process (PID=8547) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:32:25.028+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:32:25.030+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:32:25.029+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:32:25.066+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:32:25.124+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:32:25.124+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:32:25.225+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.202 seconds
+[2024-09-24T22:32:56.058+0000] {processor.py:157} INFO - Started process (PID=8565) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:32:56.058+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:32:56.059+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:32:56.059+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:32:56.090+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:32:56.138+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:32:56.138+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:32:56.220+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.165 seconds
+[2024-09-24T22:33:26.587+0000] {processor.py:157} INFO - Started process (PID=8576) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:33:26.588+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:33:26.590+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:33:26.589+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:33:26.635+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:33:26.728+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:33:26.727+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:33:26.850+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.267 seconds
+[2024-09-24T22:33:57.202+0000] {processor.py:157} INFO - Started process (PID=8587) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:33:57.203+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:33:57.204+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:33:57.204+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:33:57.248+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:33:57.318+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:33:57.318+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:33:57.434+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.234 seconds
+[2024-09-24T22:34:27.733+0000] {processor.py:157} INFO - Started process (PID=8598) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:34:27.734+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:34:27.734+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:34:27.734+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:34:27.759+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:34:27.804+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:34:27.804+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:34:27.866+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.135 seconds
+[2024-09-24T22:34:58.477+0000] {processor.py:157} INFO - Started process (PID=8609) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:34:58.478+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:34:58.479+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:34:58.479+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:34:58.545+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:34:58.622+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:34:58.621+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:34:58.734+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.266 seconds
+[2024-09-24T22:35:29.155+0000] {processor.py:157} INFO - Started process (PID=8620) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:35:29.155+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:35:29.156+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:35:29.156+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:35:29.181+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:35:29.222+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:35:29.222+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:35:29.281+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.128 seconds
+[2024-09-24T22:35:59.855+0000] {processor.py:157} INFO - Started process (PID=8631) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:35:59.856+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:35:59.857+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:35:59.857+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:35:59.897+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:35:59.949+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:35:59.949+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:36:00.020+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.168 seconds
+[2024-09-24T22:36:30.364+0000] {processor.py:157} INFO - Started process (PID=8643) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:36:30.364+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:36:30.366+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:36:30.365+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:36:30.406+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:36:30.462+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:36:30.461+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:36:30.553+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.193 seconds
+[2024-09-24T22:37:00.928+0000] {processor.py:157} INFO - Started process (PID=8654) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:37:00.929+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:37:00.930+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:37:00.929+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:37:00.956+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:37:01.003+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:37:01.003+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:37:01.084+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.158 seconds
+[2024-09-24T22:37:31.470+0000] {processor.py:157} INFO - Started process (PID=8665) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:37:31.471+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:37:31.473+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:37:31.472+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:37:31.539+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:37:31.607+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:37:31.607+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:37:31.707+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.241 seconds
+[2024-09-24T22:38:02.085+0000] {processor.py:157} INFO - Started process (PID=8676) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:38:02.086+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:38:02.088+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:38:02.087+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:38:02.126+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:38:02.171+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:38:02.171+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:38:02.236+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.153 seconds
+[2024-09-24T22:38:32.541+0000] {processor.py:157} INFO - Started process (PID=8687) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:38:32.541+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:38:32.542+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:38:32.542+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:38:32.565+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:38:32.604+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:38:32.604+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:38:32.665+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.126 seconds
+[2024-09-24T22:39:03.135+0000] {processor.py:157} INFO - Started process (PID=8698) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:39:03.136+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:39:03.137+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:39:03.137+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:39:03.166+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:39:03.214+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:39:03.214+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:39:03.279+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.147 seconds
+[2024-09-24T22:39:33.514+0000] {processor.py:157} INFO - Started process (PID=8709) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:39:33.514+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:39:33.515+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:39:33.515+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:39:33.537+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:39:33.575+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:39:33.575+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:39:33.633+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.121 seconds
+[2024-09-24T22:40:03.902+0000] {processor.py:157} INFO - Started process (PID=8720) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:40:03.902+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:40:03.903+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:40:03.903+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:40:03.926+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:40:03.964+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:40:03.964+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:40:04.020+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.121 seconds
+[2024-09-24T22:40:34.303+0000] {processor.py:157} INFO - Started process (PID=8731) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:40:34.303+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:40:34.304+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:40:34.304+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:40:34.328+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:40:34.371+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:40:34.371+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:40:34.433+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.133 seconds
+[2024-09-24T22:41:04.902+0000] {processor.py:157} INFO - Started process (PID=8742) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:41:04.902+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:41:04.903+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:41:04.903+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:41:04.928+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:41:04.969+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:41:04.968+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:41:05.030+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.131 seconds
+[2024-09-24T22:41:35.272+0000] {processor.py:157} INFO - Started process (PID=8753) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:41:35.273+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:41:35.274+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:41:35.274+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:41:35.297+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:41:35.338+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:41:35.338+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:41:35.398+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.128 seconds
+[2024-09-24T22:42:05.797+0000] {processor.py:157} INFO - Started process (PID=8764) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:42:05.797+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:42:05.798+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:42:05.798+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:42:05.820+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:42:05.856+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:42:05.855+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:42:05.913+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.118 seconds
+[2024-09-24T22:42:36.162+0000] {processor.py:157} INFO - Started process (PID=8775) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:42:36.162+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:42:36.163+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:42:36.163+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:42:36.184+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:42:36.220+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:42:36.220+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:42:36.284+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.124 seconds
+[2024-09-24T22:43:06.558+0000] {processor.py:157} INFO - Started process (PID=8786) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:43:06.558+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:43:06.559+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:43:06.559+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:43:06.585+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:43:06.623+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:43:06.623+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:43:06.694+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.139 seconds
+[2024-09-24T22:43:37.084+0000] {processor.py:157} INFO - Started process (PID=8797) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:43:37.085+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:43:37.085+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:43:37.085+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:43:37.108+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:43:37.145+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:43:37.144+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:43:37.201+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.119 seconds
+[2024-09-24T22:44:07.462+0000] {processor.py:157} INFO - Started process (PID=8808) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:44:07.462+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:44:07.463+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:44:07.463+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:44:07.489+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:44:07.533+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:44:07.533+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:44:07.605+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.146 seconds
+[2024-09-24T22:44:37.846+0000] {processor.py:157} INFO - Started process (PID=8819) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:44:37.847+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:44:37.847+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:44:37.847+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:44:37.871+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:44:37.916+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:44:37.915+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:44:37.976+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.132 seconds
+[2024-09-24T22:45:08.259+0000] {processor.py:157} INFO - Started process (PID=8835) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:45:08.261+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:45:08.263+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:45:08.262+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:45:08.296+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:45:08.348+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:45:08.348+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:45:08.446+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.190 seconds
+[2024-09-24T22:45:39.054+0000] {processor.py:157} INFO - Started process (PID=8846) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:45:39.055+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:45:39.057+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:45:39.056+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:45:39.096+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:45:39.163+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:45:39.162+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:45:39.256+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.205 seconds
+[2024-09-24T22:46:09.800+0000] {processor.py:157} INFO - Started process (PID=8857) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:46:09.800+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:46:09.801+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:46:09.801+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:46:09.826+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:46:09.868+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:46:09.868+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:46:09.930+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.133 seconds
+[2024-09-24T22:46:15.880+0000] {processor.py:157} INFO - Started process (PID=8859) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:46:15.881+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:46:15.882+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:46:15.881+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:46:15.915+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:46:15.954+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:46:15.954+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:46:16.022+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.144 seconds
+[2024-09-24T22:46:21.105+0000] {processor.py:157} INFO - Started process (PID=8862) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:46:21.105+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:46:21.106+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:46:21.106+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:46:21.142+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:46:21.183+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:46:21.183+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:46:21.248+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.146 seconds
+[2024-09-24T22:46:51.704+0000] {processor.py:157} INFO - Started process (PID=8873) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:46:51.704+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:46:51.705+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:46:51.705+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:46:51.736+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:46:51.779+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:46:51.779+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:46:51.852+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.150 seconds
+[2024-09-24T22:47:22.244+0000] {processor.py:157} INFO - Started process (PID=8884) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:47:22.246+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:47:22.247+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:47:22.247+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:47:22.287+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:47:22.354+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:47:22.353+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:47:22.463+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.222 seconds
+[2024-09-24T22:47:52.687+0000] {processor.py:157} INFO - Started process (PID=8895) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:47:52.687+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:47:52.688+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:47:52.688+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:47:52.715+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:47:52.763+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:47:52.763+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:47:52.837+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.152 seconds
+[2024-09-24T22:48:23.143+0000] {processor.py:157} INFO - Started process (PID=8906) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:48:23.144+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:48:23.145+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:48:23.145+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:48:23.176+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:48:23.226+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:48:23.226+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:48:23.337+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.197 seconds
+[2024-09-24T22:48:53.586+0000] {processor.py:157} INFO - Started process (PID=8917) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:48:53.586+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:48:53.587+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:48:53.587+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:48:53.610+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:48:53.652+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:48:53.652+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:48:53.711+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.128 seconds
+[2024-09-24T22:49:24.552+0000] {processor.py:157} INFO - Started process (PID=8928) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:49:24.553+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:49:24.554+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:49:24.554+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:49:24.577+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:49:24.617+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:49:24.617+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:49:24.676+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.126 seconds
+[2024-09-24T22:49:55.117+0000] {processor.py:157} INFO - Started process (PID=8939) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:49:55.117+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:49:55.118+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:49:55.118+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:49:55.149+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:49:55.194+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:49:55.193+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:49:55.259+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.145 seconds
+[2024-09-24T22:50:25.641+0000] {processor.py:157} INFO - Started process (PID=8950) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:50:25.643+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:50:25.646+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:50:25.644+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:50:25.699+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:50:25.784+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:50:25.784+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:50:25.908+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.271 seconds
+[2024-09-24T22:50:56.538+0000] {processor.py:157} INFO - Started process (PID=8961) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:50:56.539+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:50:56.540+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:50:56.540+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:50:56.597+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:50:56.715+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:50:56.714+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:50:56.864+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.329 seconds
+[2024-09-24T22:51:27.016+0000] {processor.py:157} INFO - Started process (PID=8971) to work on /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:51:27.017+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/raw_ingestion_6h.py for tasks to queue
+[2024-09-24T22:51:27.018+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:51:27.018+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:51:27.056+0000] {processor.py:839} INFO - DAG(s) dict_keys(['raw_ingestion_6h']) retrieved from /opt/airflow/dags/raw_ingestion_6h.py
+[2024-09-24T22:51:27.121+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:51:27.121+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2024-09-24T22:51:27.182+0000] {logging_mixin.py:154} INFO - [2024-09-24T22:51:27.181+0000] {dag.py:3722} INFO - Setting next_dagrun for raw_ingestion_6h to 2024-09-24T18:00:00+00:00, run_after=2024-09-25T00:00:00+00:00
+[2024-09-24T22:51:27.219+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/raw_ingestion_6h.py took 0.207 seconds
